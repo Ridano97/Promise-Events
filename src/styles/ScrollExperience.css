@@ -1,0 +1,184 @@
+.scroll-experience {
+  position: relative;
+  min-height: auto;
+  background:
+    linear-gradient(180deg, transparent, rgba(43, 36, 30, 0.05) 28%, transparent 80%),
+    var(--cream);
+}
+
+.scroll-experience__sticky {
+  position: relative;
+  top: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(26px, 4vw, 46px);
+  align-items: start;
+  min-height: auto;
+  padding: clamp(32px, 4vw, 58px) 0;
+  overflow: hidden;
+}
+
+.scroll-experience__copy {
+  max-width: 920px;
+}
+
+.scroll-experience__copy h2 {
+  max-width: 880px;
+  margin-top: 16px;
+  font-size: clamp(2.8rem, 4.4vw, 5.8rem);
+}
+
+.scroll-experience__copy .text-body {
+  max-width: 680px;
+  margin-top: 24px;
+}
+
+.scroll-experience__stage {
+  position: relative;
+  min-height: auto;
+  perspective: 1500px;
+}
+
+.scroll-experience__ring {
+  position: absolute;
+  inset: 8% 18% auto auto;
+  width: min(42vw, 520px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(143, 13, 23, 0.52);
+  border-radius: 48% 52% 50% 50%;
+  box-shadow:
+    inset 0 0 42px rgba(198, 165, 106, 0.16),
+    0 32px 70px rgba(46, 40, 34, 0.12);
+}
+
+.scroll-experience__track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2.2vw, 34px);
+  align-items: center;
+  height: 100%;
+  padding: 22px 0;
+  transform-style: preserve-3d;
+}
+
+.scroll-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 390px;
+  border: 1px solid rgba(46, 40, 34, 0.12);
+  border-radius: 28px;
+  background: var(--brown);
+  color: var(--cream);
+  box-shadow: var(--shadow);
+  transform-style: preserve-3d;
+}
+
+.scroll-card:nth-child(2) {
+  margin-top: 42px;
+}
+
+.scroll-card:nth-child(3) {
+  margin-top: -28px;
+}
+
+.scroll-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 38%, rgba(43, 36, 30, 0.88));
+  pointer-events: none;
+}
+
+.scroll-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 390px;
+  object-fit: cover;
+  transition: scale 900ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.scroll-card:hover img {
+  scale: 1.08;
+}
+
+.scroll-card div {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  left: 24px;
+  z-index: 1;
+}
+
+.scroll-card span {
+  font-family: var(--mono);
+  color: rgba(246, 244, 238, 0.76);
+}
+
+.scroll-card h3 {
+  margin: 12px 0 10px;
+  font-family: var(--serif);
+  font-size: clamp(1.65rem, 2vw, 2.9rem);
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.scroll-card p {
+  max-width: 360px;
+  margin: 0;
+  color: rgba(246, 244, 238, 0.76);
+  line-height: 1.45;
+}
+
+@media (max-width: 1080px) {
+  .scroll-experience {
+    min-height: auto;
+  }
+
+  .scroll-experience__sticky {
+    position: relative;
+    top: auto;
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .scroll-experience__stage {
+    min-height: auto;
+  }
+
+  .scroll-experience__track {
+    grid-template-columns: 1fr;
+    transform: none !important;
+  }
+
+  .scroll-card,
+  .scroll-card:nth-child(2),
+  .scroll-card:nth-child(3) {
+    min-height: 400px;
+    margin-top: 0;
+  }
+
+  .scroll-card img {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 760px) {
+  .scroll-experience__copy h2 {
+    font-size: clamp(2.4rem, 11vw, 4rem);
+  }
+
+  .scroll-experience__stage {
+    min-height: auto;
+  }
+
+  .scroll-card,
+  .scroll-card:nth-child(2),
+  .scroll-card:nth-child(3) {
+    min-height: 340px;
+  }
+
+  .scroll-card img {
+    min-height: 340px;
+  }
+}

@@ -1,0 +1,50 @@
+.story {
+  padding: clamp(46px, 6vw, 88px) 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.story-top {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(320px, 0.65fr);
+  gap: clamp(28px, 5vw, 84px);
+  align-items: end;
+}
+
+.story-title {
+  margin-top: 24px;
+  font-size: clamp(3.5rem, 5.6vw, 8rem);
+}
+
+.story-text {
+  margin: 0;
+}
+
+.story-strip {
+  overflow: hidden;
+  margin-top: clamp(42px, 6vw, 80px);
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  background: var(--cream);
+}
+
+.story-strip div {
+  width: max-content;
+  padding: 24px 0 30px;
+  font-family: var(--serif);
+  font-size: clamp(3.2rem, 6vw, 8.4rem);
+  line-height: 1;
+  white-space: nowrap;
+  animation: marquee 26s linear infinite;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 900px) {
+  .story-top {
+    grid-template-columns: 1fr;
+  }
+}

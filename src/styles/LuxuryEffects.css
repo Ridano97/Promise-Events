@@ -1,0 +1,43 @@
+.luxury-particles {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.72;
+  mix-blend-mode: multiply;
+}
+
+.line {
+  overflow: hidden;
+}
+
+.char {
+  display: inline-block;
+  transform-origin: 50% 100%;
+  will-change: transform, opacity, filter;
+}
+
+body::before {
+  background-position:
+    calc(var(--pointer-x, 50vw) * 0.018) calc(var(--pointer-y, 50vh) * 0.018),
+    calc(var(--pointer-x, 50vw) * -0.012) calc(var(--pointer-y, 50vh) * -0.012);
+}
+
+.hero-3d {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  z-index: 3;
+  width: min(34vw, 320px);
+  aspect-ratio: 1;
+  pointer-events: none;
+  opacity: 0.86;
+  filter: drop-shadow(0 24px 40px rgba(43, 36, 30, 0.22));
+}
+
+@media (max-width: 760px) {
+  .hero-3d {
+    width: 190px;
+    opacity: 0.68;
+  }
+}
