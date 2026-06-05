@@ -88,9 +88,9 @@ function TextCard({ item, index }) {
   return (
     <motion.div
       className="universe-card universe-card--text"
-      initial={{ opacity: 0, y: 28 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.78, delay: 0.18 + index * 0.08, ease: [0.19, 1, 0.22, 1] }}
+      initial={{ opacity: 0, y: 34, filter: "blur(10px)" }}
+      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      transition={{ duration: 0.95, delay: 0.22 + index * 0.1, ease: [0.16, 1, 0.3, 1] }}
     >
       {item.paragraphs.map((paragraph) => (
         <p key={paragraph}>{paragraph}</p>
@@ -103,9 +103,19 @@ function ImageCard({ item, index }) {
   return (
     <motion.figure
       className="universe-card universe-card--image"
-      initial={{ opacity: 0, y: 34, rotate: index % 2 === 0 ? -1.2 : 1.2 }}
-      animate={{ opacity: 1, y: 0, rotate: index % 2 === 0 ? -0.28 : 0.28 }}
-      transition={{ duration: 0.82, delay: 0.1 + index * 0.06, ease: [0.19, 1, 0.22, 1] }}
+      initial={{
+        opacity: 0,
+        y: 42,
+        rotate: index % 2 === 0 ? -1.2 : 1.2,
+        clipPath: "inset(18% 0 18% 0)",
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        rotate: index % 2 === 0 ? -0.28 : 0.28,
+        clipPath: "inset(0% 0 0% 0)",
+      }}
+      transition={{ duration: 1.05, delay: 0.12 + index * 0.1, ease: [0.16, 1, 0.3, 1] }}
     >
       <img src={item.src} alt={item.alt} style={{ objectPosition: item.position }} />
     </motion.figure>
@@ -116,9 +126,9 @@ function CarouselPair({ image, text, index }) {
   return (
     <motion.article
       className="universe-pair"
-      initial={{ opacity: 0, y: 42 }}
+      initial={{ opacity: 0, y: 46 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.9, delay: 0.12 + index * 0.1, ease: [0.19, 1, 0.22, 1] }}
+      transition={{ duration: 1, delay: 0.08 + index * 0.12, ease: [0.16, 1, 0.3, 1] }}
     >
       <ImageCard item={image} index={index} />
       <TextCard item={text} index={index} />
@@ -154,14 +164,14 @@ export default function PromiseIntro() {
 
   return (
     <section className="promise-intro section-shell" id="univers">
-      <div className="universe-heading" data-reveal>
+      <div className="universe-heading" data-reveal="universe-heading">
         <p className="universe-kicker">À propos</p>
         <h2>L'univers Promise Events</h2>
       </div>
 
       <div
         className="universe-carousel"
-        data-reveal
+        data-reveal="universe-frame"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
         style={{ "--reveal-delay": "90ms" }}

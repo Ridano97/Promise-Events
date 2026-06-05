@@ -6,6 +6,7 @@
 @import "../styles/LuxuryEffects.css";
 @import "../styles/Hero.css";
 @import "../styles/PromiseIntro.css";
+@import "../styles/StatsCounter.css";
 @import "../styles/Services.css";
 @import "../styles/ScrollExperience.css";
 @import "../styles/Story.css";
@@ -192,33 +193,38 @@ main {
 [data-reveal] {
   opacity: 1;
   transform: translateY(0);
+  filter: blur(0);
   transition:
-    opacity 900ms ease,
-    transform 900ms cubic-bezier(0.19, 1, 0.22, 1),
-    clip-path 900ms cubic-bezier(0.19, 1, 0.22, 1);
+    opacity 1100ms ease,
+    filter 1100ms ease,
+    transform 1200ms cubic-bezier(0.16, 1, 0.3, 1),
+    clip-path 1200ms cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, filter, transform, clip-path;
 }
 
 [data-reveal="image"] {
-  clip-path: inset(0 0 0 0 round 26px);
+  clip-path: inset(0 0 0 0);
 }
 
 .reveal-enabled [data-reveal]:not(.is-visible) {
   opacity: 0;
-  transform: translateY(34px);
+  filter: blur(10px);
+  transform: translateY(54px) scale(0.985);
 }
 
 .reveal-enabled [data-reveal="image"]:not(.is-visible) {
-  clip-path: inset(12% 0 12% 0 round 26px);
+  clip-path: inset(14% 0 14% 0);
 }
 
 [data-reveal].is-visible {
   opacity: 1;
+  filter: blur(0);
   transform: translateY(0);
 }
 
 [data-reveal="image"].is-visible {
-  clip-path: inset(0 0 0 0 round 26px);
+  clip-path: inset(0 0 0 0);
 }
 
 ::selection {
