@@ -15,11 +15,9 @@ const services = [
     number: "02",
     title: "Composition florale",
     text: "Créations florales sur mesure, du bouquet de demande à celui de la mariée, afin d'apporter une parfaite harmonie à chaque mise en scène.",
-    image: "/images/bouquet4.jpg",
+    image: "/images/bouquet4.png",
     alt: "Composition florale raffinée pour événement",
-    fit: "contain",
     position: "center center",
-    padding: "5.5%",
   },
   {
     number: "03",
@@ -50,7 +48,7 @@ export default function Services() {
 
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % services.length);
-    }, 4300);
+    }, 3000);
 
     return () => window.clearInterval(timer);
   }, [activeIndex, isManualSelection, isPaused]);

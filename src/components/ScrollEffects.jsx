@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function ScrollEffects() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const revealItems = Array.from(document.querySelectorAll("[data-reveal]"));
@@ -54,7 +57,7 @@ export default function ScrollEffects() {
       window.addEventListener("scroll", onScroll, { passive: true });
       window.addEventListener("resize", revealVisibleItems);
       const safetyTimer = window.setTimeout(() => {
-        revealItems.forEach((item) => item.classList.add("is-visible"));
+        revealVisibleItems();
       }, 2200);
 
       return () => {
@@ -69,7 +72,7 @@ export default function ScrollEffects() {
 
     revealItems.forEach((item) => item.classList.add("is-visible"));
     return undefined;
-  }, []);
+  }, [pathname]);
 
   return null;
 }

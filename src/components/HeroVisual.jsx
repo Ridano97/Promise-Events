@@ -19,7 +19,7 @@ export default function HeroVisual() {
       <div className="hero-orbit" aria-hidden="true" />
       <div className="hero-luxe-glow" aria-hidden="true" />
       <img
-        src="/images/hero-proposal-kneeling.jpg"
+        src="/images/mariage2.png"
         alt="Demande en mariage romantique au bord du lac"
         data-parallax="0.18"
       />

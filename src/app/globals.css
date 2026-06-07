@@ -1,5 +1,6 @@
 @import "swiper/css";
 @import "swiper/css/effect-coverflow";
+@import "swiper/css/free-mode";
 @import "../styles/Header.css";
 @import "../styles/PageTransition.css";
 @import "../styles/PageSections.css";
@@ -13,6 +14,9 @@
 @import "../styles/Gallery.css";
 @import "../styles/ContactSection.css";
 @import "../styles/Footer.css";
+@import "../styles/ProposalExperience.css";
+@import "../styles/ChicBlooms.css";
+@import "../styles/Legal.css";
 
 :root {
   --cream: #f6f4ee;
@@ -41,6 +45,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 118px;
   background: var(--cream);
+  overflow-x: clip;
 }
 
 body {

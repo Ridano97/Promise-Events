@@ -4,27 +4,27 @@ import { motion } from "framer-motion";
 import { TransitionLink } from "./RouteTransition";
 
 const proposalBouquets = [
-  ["Décoration de demande en mariage", "450 EUR", "/images/proposal-red-heart-day.png"],
-  ["Bouquet de roses rouges Portanova", "110 EUR", "/images/proposal-red-heart-close.png"],
-  ["Photos et vidéos souvenirs", "50 EUR", "/images/proposal-red-heart-wide.png"],
+  ["Décoration de demande en mariage", "400 EUR", "/images/mariage2.png"],
+  ["Bouquet de roses rouges Portanova", "110 EUR", "/images/mariage3.png"],
+  ["Photos et vidéos souvenirs", "30 EUR", "/images/mariage1.png"],
 ];
 
 const bridalBouquets = [
-  ["Bouquet de Lys", "120 EUR", "/images/bouquet-lys-perle.png"],
-  ["Bouquet de Pivoine", "140 EUR", "/images/bouquet-pivoine.jpg"],
-  ["Bouquet Callas perlé", "180 EUR", "/images/bouquet-callas-perle.png"],
-  ["Bouquet de Rose blanche avec Gypsophile", "90 EUR", "/images/bouquet-rose-gypsophile.png"],
-  ["Bouquet de Rénoncule", "145 EUR", "/images/bouquet-pivoine.jpg"],
-  ["Bouquet White Garden", "150 EUR", "/images/bouquet-white-garden.png"],
+  ["Bouquet de Lys", "120 EUR", "/images/bouquet2.png"],
+  ["Bouquet de Pivoine", "140 EUR", "/images/bouquet4.jpg"],
+  ["Bouquet Callas perlé", "180 EUR", "/images/bouquet6.JPG"],
+  ["Bouquet de Rose blanche avec Gypsophile", "90 EUR", "/images/bouquet3.png"],
+  ["Bouquet de Rénoncule", "145 EUR", "/images/bouquet4.png"],
+  ["Bouquet White Garden", "150 EUR", "/images/bouquet1.png"],
 ];
 
 const rollingImages = [
-  "/images/proposal-red-heart-lake.png",
-  "/images/hero-proposal-kneeling.jpg",
-  "/images/proposal-red-heart-close.png",
-  "/images/bouquet-callas-perle.png",
-  "/images/bouquet-white-garden.png",
-  "/images/universe-couple-white-bouquet.jpg",
+  "/images/accueil2.jpg",
+  "/images/mariage2.png",
+  "/images/mariage3.png",
+  "/images/bouquet6.JPG",
+  "/images/bouquet1.png",
+  "/images/mariage1.png",
 ];
 
 const cardMotion = {
@@ -67,7 +67,7 @@ export default function Gallery() {
       <div className="pack-panel" data-reveal>
         <p className="eyebrow">Pack demande en mariage complet</p>
         <h3>Décoration complète, bouquet, photos, vidéos et musique d'ambiance.</h3>
-        <span>Tarif du pack complet : 610 EUR</span>
+        <span>Tarif du pack complet : 540 EUR</span>
       </div>
 
       <div className="gallery-heading bouquet-heading">

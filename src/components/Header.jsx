@@ -1,13 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { TransitionLink } from "./RouteTransition";
 
 const navItems = [
   ["Accueil", "/"],
   ["Univers Promise Events", "/#univers"],
-  ["Chic Blooms x\nPromise Events", null],
+  ["Chic Blooms x\nPromise Events", "/chic-blooms"],
   ["Demande en mariage", "/demande-en-mariage"],
   ["Contact", "/contact"],
 ];
@@ -38,16 +38,26 @@ function NavEntry({ label, href, pathname, onNavigate }) {
 export default function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const isChicBlooms = pathname === "/chic-blooms";
+  const logo = isChicBlooms ? "/images/logochicblooms.png" : "/images/logo.png";
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  const closeOnNavigation = (event) => {
+    if (event.target.closest("a[href]")) setOpen(false);
+  };
 
   return (
-    <header className="site-header">
+    <header className={isChicBlooms ? "site-header site-header--chic" : "site-header"}>
       <TransitionLink
         className="brand-mark brand-mark--mobile"
         href="/"
         aria-label="Promise Events"
         onNavigate={() => setOpen(false)}
       >
-        <img src="/images/logo.png" alt="" />
+        <img src={logo} alt="" />
       </TransitionLink>
 
       <button
@@ -67,6 +77,7 @@ export default function Header() {
         className={open ? "main-nav is-open" : "main-nav"}
         id="primary-navigation"
         aria-label="Navigation principale"
+        onClickCapture={closeOnNavigation}
       >
         <div className="main-nav__group main-nav__group--left">
           {leftNavItems.map(([label, href]) => (
@@ -99,7 +110,7 @@ export default function Header() {
         aria-label="Promise Events"
         onNavigate={() => setOpen(false)}
       >
-        <img src="/images/logo.png" alt="" />
+        <img src={logo} alt="" />
       </TransitionLink>
     </header>
   );

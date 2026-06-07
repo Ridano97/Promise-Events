@@ -14,7 +14,7 @@ export default function ProjetEvenementielPage() {
         eyebrow="Projet événementiel"
         title="Une scénographie florale pour vos instants d'exception."
         text="Mariage, anniversaire, baptême, réception privée ou décoration de chambre : Promise Event imagine des ambiances complètes, élégantes et parfaitement coordonnées."
-        image="/images/proposal-red-heart-lake.png"
+        image="/images/fete.png"
         imageAlt="Mise en scène florale avec roses rouges et bougies"
         tone="proposal"
       />

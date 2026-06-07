@@ -44,7 +44,14 @@ export function RouteTransitionProvider({ children }) {
     const originX = rect ? rect.left + rect.width / 2 : window.innerWidth / 2;
     const originY = rect ? rect.top + rect.height / 2 : 90;
 
-    setTransition({ phase: "fly", label, originX, originY });
+    setTransition({
+      phase: "fly",
+      label,
+      originX,
+      originY,
+      logo: href.startsWith("/chic-blooms") ? "/images/logochicblooms.png" : "/images/logo.png",
+      chic: href.startsWith("/chic-blooms"),
+    });
 
     timers.current.push(
       window.setTimeout(() => {
@@ -108,7 +115,7 @@ export function RouteTransitionProvider({ children }) {
       {children}
       {transition ? (
         <div
-          className={`page-transition is-${transition.phase}`}
+          className={`page-transition is-${transition.phase}${transition.chic ? " is-chic" : ""}`}
           style={{
             "--letter-origin-x": `${transition.originX}px`,
             "--letter-origin-y": `${transition.originY}px`,
@@ -118,7 +125,7 @@ export function RouteTransitionProvider({ children }) {
           <div className="transition-veil" />
           <div className="transition-logo">
             <span className="transition-logo__halo" />
-            <img src="/images/logo.png" alt="" />
+            <img src={transition.logo} alt="" />
           </div>
         </div>
       ) : null}
@@ -131,7 +138,10 @@ export function TransitionLink({ href, children, className, onNavigate, ...props
 
   const handleClick = (event) => {
     props.onClick?.(event);
-    if (event.defaultPrevented) return;
+    if (event.defaultPrevented) {
+      onNavigate?.();
+      return;
+    }
     const isModifiedClick = event.metaKey || event.ctrlKey || event.shiftKey || event.altKey;
     const isNonPrimaryClick = typeof event.button === "number" && event.button !== 0;
     if (isModifiedClick || isNonPrimaryClick) return;

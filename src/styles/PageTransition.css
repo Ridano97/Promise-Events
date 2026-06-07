@@ -94,6 +94,24 @@
   mix-blend-mode: multiply;
 }
 
+.page-transition.is-chic .transition-veil {
+  background:
+    radial-gradient(circle at 50% 42%, rgba(128, 20, 27, 0.18), transparent 30%),
+    rgba(223, 218, 209, 0.96);
+}
+
+.page-transition.is-chic .transition-logo {
+  width: clamp(150px, 20vw, 320px);
+  height: clamp(74px, 10vw, 150px);
+  border-radius: 0;
+  background: rgba(223, 218, 209, 0.96);
+}
+
+.page-transition.is-chic .transition-logo img {
+  width: 88%;
+  height: 88%;
+}
+
 @keyframes logoFly {
   from {
     transform: translate(-50%, -50%) rotate(-10deg) scale(0.34);
