@@ -109,23 +109,6 @@ export default function ProposalExperience() {
         </div>
       </section>
 
-      <section className="proposal-film" data-proposal-film>
-        <div className="proposal-film__media">
-          <iframe
-            src="https://customer-8z1yg93quaaa9ooh.cloudflarestream.com/fb31c83bab4d0bacfb6e38ce3ac3b5eb/iframe?autoplay=true&muted=true&loop=true&controls=false&preload=true"
-            title="Les détails d'une mise en scène Promise Events"
-            loading="lazy"
-            allow="accelerometer; autoplay; encrypted-media; picture-in-picture"
-            allowFullScreen
-          />
-          <div className="proposal-film__veil" />
-          <div className="proposal-film__copy">
-            <h2>Votre histoire,<br />mise en scène.</h2>
-            <span>Promise Events · Genève · Lac Léman</span>
-          </div>
-        </div>
-      </section>
-
       <section className="proposal-bouquets">
         <header className="proposal-section-heading proposal-section-heading--center" data-reveal>
           <p className="proposal-kicker">La touche finale</p>
@@ -159,6 +142,23 @@ export default function ProposalExperience() {
               </div>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="proposal-film" data-proposal-film>
+        <div className="proposal-film__media">
+          <iframe
+            src="https://customer-8z1yg93quaaa9ooh.cloudflarestream.com/fb31c83bab4d0bacfb6e38ce3ac3b5eb/iframe?autoplay=true&muted=true&loop=true&controls=false&preload=true"
+            title="Les détails d'une mise en scène Promise Events"
+            loading="lazy"
+            allow="accelerometer; autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen
+          />
+          <div className="proposal-film__veil" />
+          <div className="proposal-film__copy">
+            <h2>Votre histoire,<br />mise en scène.</h2>
+            <span>Promise Events · Genève · Lac Léman</span>
+          </div>
         </div>
       </section>
 

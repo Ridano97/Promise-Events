@@ -13,7 +13,7 @@
 .chic-page .chic-label {
   margin: 0;
   font-family: var(--mono);
-  font-size: 0.68rem;
+  font-size: 0.82rem;
   letter-spacing: 0.17em;
   text-transform: uppercase;
 }
@@ -34,7 +34,7 @@
 .chic-hero {
   position: relative;
   display: grid;
-  grid-template-columns: 0.92fr 0.74fr 0.32fr;
+  grid-template-columns: minmax(0, 0.9fr) minmax(420px, 0.78fr);
   gap: clamp(24px, 4vw, 74px);
   align-items: center;
   width: min(100% - 48px, 1600px);
@@ -64,7 +64,7 @@
 .chic-hero__brand > p {
   margin: 0 0 22px;
   font-family: var(--mono);
-  font-size: 0.7rem;
+  font-size: 0.84rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
@@ -89,7 +89,7 @@
   width: fit-content;
   padding-bottom: 8px;
   border-bottom: 1px solid currentColor;
-  font-size: 0.78rem;
+  font-size: 0.94rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: color 260ms ease, gap 260ms ease;
@@ -134,15 +134,9 @@
   background: rgba(40, 39, 37, 0.84);
   color: #f4f0e8;
   font-family: var(--mono);
-  font-size: 0.64rem;
+  font-size: 0.77rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-}
-
-.chic-hero__visual--detail {
-  align-self: end;
-  aspect-ratio: 0.72;
-  margin-bottom: 8vh;
 }
 
 .chic-hero__edition {
@@ -150,7 +144,7 @@
   right: 0;
   bottom: 34px;
   font-family: var(--mono);
-  font-size: 0.66rem;
+  font-size: 0.79rem;
   letter-spacing: 0.16em;
   writing-mode: vertical-rl;
   text-transform: uppercase;
@@ -210,7 +204,7 @@
 .chic-intro__copy {
   margin: 0;
   color: var(--chic-muted);
-  font-size: clamp(1rem, 1.15vw, 1.22rem);
+  font-size: clamp(1.2rem, 1.38vw, 1.46rem);
   line-height: 1.72;
 }
 
@@ -238,7 +232,7 @@
   max-width: 280px;
   margin: 0;
   color: var(--chic-muted);
-  font-size: 0.92rem;
+  font-size: 1.1rem;
 }
 
 .chic-rail {
@@ -281,7 +275,7 @@
   z-index: 2;
   color: #fff;
   font-family: var(--mono);
-  font-size: 0.6rem;
+  font-size: 0.72rem;
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -307,7 +301,7 @@
 .chic-product__info p {
   margin: 7px 0 0;
   color: var(--chic-muted);
-  font-size: 0.76rem;
+  font-size: 0.91rem;
   text-transform: uppercase;
 }
 
@@ -357,7 +351,7 @@
   padding-top: 12px;
   color: var(--chic-muted);
   font-family: var(--mono);
-  font-size: 0.62rem;
+  font-size: 0.74rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -487,7 +481,7 @@
   border: 1px solid var(--chic-ink);
   background: var(--chic-ink);
   color: var(--chic-bg);
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: background 260ms ease, color 260ms ease, gap 260ms ease;

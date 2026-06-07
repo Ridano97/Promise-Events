@@ -28,7 +28,7 @@
   max-width: 530px;
   margin: 0 0 36px;
   color: var(--ink-soft);
-  font-size: clamp(1rem, 1.1vw, 1.28rem);
+  font-size: clamp(1.2rem, 1.32vw, 1.54rem);
   line-height: 1.65;
 }
 
@@ -39,7 +39,7 @@
   width: fit-content;
   padding-bottom: 8px;
   border-bottom: 1px solid var(--ink);
-  font-size: 0.78rem;
+  font-size: 0.94rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: color 260ms ease, gap 260ms ease;
@@ -83,12 +83,12 @@
   padding: 20px 24px;
   color: var(--cream);
   font-family: var(--serif);
-  font-size: 1.05rem;
+  font-size: 1.26rem;
 }
 
 .contact-hero__film > p span {
   font-family: var(--mono);
-  font-size: 0.7rem;
+  font-size: 0.84rem;
 }
 
 .contact-section {
@@ -125,7 +125,7 @@
 .contact-info__kicker {
   margin: 0 0 24px;
   font-family: var(--mono);
-  font-size: 0.7rem;
+  font-size: 0.84rem;
   letter-spacing: 0.13em;
   text-transform: uppercase;
 }
@@ -153,7 +153,7 @@
 .contact-info dd {
   margin: 6px 0 0;
   color: var(--ink-soft);
-  font-size: 1.05rem;
+  font-size: 1.26rem;
 }
 
 .contact-info dd a {
@@ -197,7 +197,7 @@
   background: rgba(28, 22, 19, 0.82);
   color: var(--cream);
   font-family: var(--mono);
-  font-size: 0.65rem;
+  font-size: 0.78rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -418,7 +418,7 @@
   gap: 12px !important;
   align-items: start;
   padding-top: 8px;
-  font-size: 0.78rem;
+  font-size: 0.94rem;
   line-height: 1.5;
 }
 

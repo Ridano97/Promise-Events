@@ -64,14 +64,14 @@
   row-gap: 0;
   justify-self: center;
   color: var(--ink-soft);
-  font-size: clamp(0.9rem, 0.18vw + 0.86rem, 1.04rem);
+  font-size: clamp(1rem, 0.18vw + 0.96rem, 1.14rem);
   text-align: center;
 }
 
 .main-nav__group {
   display: grid;
   align-items: center;
-  gap: clamp(42px, 3.6vw, 72px);
+  gap: clamp(28px, 2.5vw, 48px);
 }
 
 .main-nav__group--left {
@@ -93,7 +93,7 @@
 
   .main-nav {
     grid-template-columns: minmax(0, 1fr) 160px minmax(0, 1fr);
-    font-size: 0.84rem;
+    font-size: 0.94rem;
   }
 
   .main-nav__group {

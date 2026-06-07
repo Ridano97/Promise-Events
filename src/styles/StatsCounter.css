@@ -119,7 +119,7 @@
   display: grid;
   gap: 4px;
   margin: 0;
-  font-size: clamp(1rem, 1vw, 1.35rem);
+  font-size: clamp(1.2rem, 1.2vw, 1.62rem);
   letter-spacing: 0.22em;
   line-height: 1.18;
   text-transform: uppercase;
@@ -173,7 +173,7 @@
   }
 
   .stats-counter__label {
-    font-size: 0.86rem;
+    font-size: 1.03rem;
     letter-spacing: 0.16em;
   }
 }

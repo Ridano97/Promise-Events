@@ -29,11 +29,21 @@ export function RouteTransitionProvider({ children }) {
   const navigate = useCallback((href, label, element) => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const targetHash = new URL(href, window.location.href).hash;
+    const announceAnchorArrival = () => {
+      window.dispatchEvent(
+        new CustomEvent("promise:anchor-arrived", {
+          detail: { hash: targetHash },
+        }),
+      );
+    };
 
     if (reduceMotion) {
       router.push(href);
       if (targetHash) {
-        window.setTimeout(() => document.querySelector(targetHash)?.scrollIntoView({ behavior: "smooth" }), 80);
+        window.setTimeout(() => {
+          document.querySelector(targetHash)?.scrollIntoView({ behavior: "smooth" });
+          announceAnchorArrival();
+        }, 80);
       }
       return;
     }
@@ -63,6 +73,7 @@ export function RouteTransitionProvider({ children }) {
       timers.current.push(
         window.setTimeout(() => {
           document.querySelector(targetHash)?.scrollIntoView({ behavior: "smooth", block: "start" });
+          announceAnchorArrival();
         }, 1260),
       );
     }

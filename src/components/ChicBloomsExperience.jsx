@@ -49,20 +49,6 @@ const bouquets = [
     price: "180 €",
     note: "Couture",
   },
-  {
-    image: "/images/bouquetrouge1.jpg",
-    name: "Portanova 50",
-    detail: "cinquante roses rouges",
-    price: "225 €",
-    note: "Passion",
-  },
-  {
-    image: "/images/bouquetrouge2.jpg",
-    name: "Portanova 25",
-    detail: "vingt-cinq roses rouges",
-    price: "110 €",
-    note: "Iconique",
-  },
 ];
 
 const reveal = {
@@ -97,17 +83,8 @@ export default function ChicBloomsExperience() {
           animate={{ opacity: 1, y: 0, clipPath: "inset(0% 0 0 0)" }}
           transition={{ duration: 1.35, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
         >
-          <img src="/images/bouquet1.png" alt="Bouquet White Garden" />
-          <figcaption>01 · White Garden</figcaption>
-        </motion.figure>
-
-        <motion.figure
-          className="chic-hero__visual chic-hero__visual--detail"
-          initial={{ opacity: 0, x: 45 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.15, delay: 0.36, ease: [0.16, 1, 0.3, 1] }}
-        >
           <img src="/images/bouquet6.JPG" alt="Bouquet de callas perlé" />
+          <figcaption>01 · Callas perlé</figcaption>
         </motion.figure>
         <span className="chic-hero__edition">Édition 2026</span>
       </section>
@@ -198,30 +175,6 @@ export default function ChicBloomsExperience() {
           <img src="/images/bouquet6.JPG" alt="Détail d’un bouquet de callas perlé" />
           <figcaption>Chaque détail compte.</figcaption>
         </motion.figure>
-      </section>
-
-      <section className="chic-grid">
-        <motion.header {...reveal}>
-          <p className="chic-label">Nos essentiels</p>
-          <h2>Huit bouquets.<br />Huit personnalités.</h2>
-        </motion.header>
-        <div className="chic-grid__items">
-          {bouquets.map((bouquet, index) => (
-            <motion.article
-              {...reveal}
-              transition={{ ...reveal.transition, delay: (index % 3) * 0.08 }}
-              className={`chic-grid-card chic-grid-card--${index + 1}`}
-              key={`grid-${bouquet.name}-${index}`}
-            >
-              <div key={`media-${index}`}>
-                <img src={bouquet.image} alt={`Bouquet ${bouquet.name}`} />
-                <span>0{index + 1}</span>
-              </div>
-              <h3 key={`name-${index}`}>{bouquet.name}</h3>
-              <p key={`detail-${index}`}>{bouquet.detail} · {bouquet.price}</p>
-            </motion.article>
-          ))}
-        </div>
       </section>
 
       <section className="chic-cta">

@@ -54,12 +54,16 @@ export default function StatsCounter() {
     if (!section) return undefined;
     let countTimer = 0;
     let frame = 0;
+    let hasOpened = false;
 
     const openSection = () => {
+      if (hasOpened) return;
+      hasOpened = true;
       setIsOpen(true);
       countTimer = window.setTimeout(() => setStartCount(true), 760);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", checkPosition);
+      window.removeEventListener("promise:anchor-arrived", onAnchorArrival);
       if (frame) window.cancelAnimationFrame(frame);
     };
 
@@ -74,14 +78,27 @@ export default function StatsCounter() {
       if (!frame) frame = window.requestAnimationFrame(checkPosition);
     };
 
-    checkPosition();
+    const onAnchorArrival = (event) => {
+      if (event.detail?.hash === "#univers") {
+        openSection();
+      }
+    };
+
+    const initialHashTimer = window.setTimeout(() => {
+      if (window.location.hash === "#univers") openSection();
+      else checkPosition();
+    }, 120);
+
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", checkPosition);
+    window.addEventListener("promise:anchor-arrived", onAnchorArrival);
 
     return () => {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", checkPosition);
+      window.removeEventListener("promise:anchor-arrived", onAnchorArrival);
       if (frame) window.cancelAnimationFrame(frame);
+      window.clearTimeout(initialHashTimer);
       window.clearTimeout(countTimer);
     };
   }, []);

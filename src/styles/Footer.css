@@ -27,7 +27,7 @@
   max-width: 330px;
   margin: 22px 0 0;
   color: rgba(246, 244, 238, 0.62);
-  font-size: 0.92rem;
+  font-size: 1.1rem;
   line-height: 1.6;
 }
 
@@ -35,7 +35,7 @@
   margin: 0 0 24px;
   color: var(--cream);
   font-family: var(--mono);
-  font-size: 0.88rem;
+  font-size: 1.06rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -50,7 +50,7 @@
 .site-footer nav span {
   width: fit-content;
   color: rgba(246, 244, 238, 0.7);
-  font-size: 1.08rem;
+  font-size: 1.3rem;
   line-height: 1.35;
   transition:
     color 240ms ease,
@@ -112,13 +112,13 @@
 }
 
 .footer-social-list strong {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
 }
 
 .footer-social-list small {
   color: rgba(246, 244, 238, 0.42);
-  font-size: 0.82rem;
+  font-size: 0.98rem;
 }
 
 .footer-social-arrow {
@@ -143,7 +143,7 @@
   border-top: 1px solid rgba(246, 244, 238, 0.22);
   color: rgba(246, 244, 238, 0.46);
   font-family: var(--mono);
-  font-size: 0.7rem;
+  font-size: 0.84rem;
   letter-spacing: 0.08em;
 }
 

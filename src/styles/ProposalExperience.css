@@ -10,7 +10,7 @@
 .proposal-kicker {
   margin: 0;
   font-family: var(--mono);
-  font-size: 0.76rem;
+  font-size: 0.91rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -52,7 +52,7 @@
   max-width: 560px;
   margin: 0;
   color: var(--ink-soft);
-  font-size: clamp(1.05rem, 1.15vw, 1.35rem);
+  font-size: clamp(1.26rem, 1.38vw, 1.62rem);
   line-height: 1.55;
 }
 
@@ -64,7 +64,7 @@
   padding-top: 22px;
   border-top: 1px solid var(--line);
   font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.86rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -73,7 +73,7 @@
   width: fit-content;
   padding-bottom: 7px;
   border-bottom: 1px solid var(--ink);
-  font-size: 0.86rem;
+  font-size: 1.03rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -115,7 +115,7 @@
 .proposal-hero__media figcaption p {
   margin: 0;
   font-family: var(--serif);
-  font-size: 1.08rem;
+  font-size: 1.3rem;
 }
 
 .proposal-scenes,
@@ -184,7 +184,7 @@
   bottom: 12px;
   color: var(--cream);
   font-family: var(--mono);
-  font-size: 0.7rem;
+  font-size: 0.84rem;
 }
 
 .proposal-scene--1 {
@@ -248,7 +248,7 @@
 
 .proposal-film__copy span {
   font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.86rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -314,7 +314,7 @@
   top: 14px;
   left: 14px;
   font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.86rem;
 }
 
 .proposal-bouquet__copy {
@@ -378,7 +378,7 @@
 
 .proposal-pack__items span {
   font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.86rem;
 }
 
 .proposal-pack__items h3 {
