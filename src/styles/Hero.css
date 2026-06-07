@@ -140,6 +140,35 @@
   }
 }
 
+@media (min-width: 1600px) {
+  .hero {
+    min-height: calc(100svh - 108px);
+    scroll-margin-top: 108px;
+  }
+
+  .hero-copy {
+    padding-block: clamp(68px, 6.5vw, 104px);
+  }
+
+  .hero-title {
+    font-size: clamp(3.2rem, 4.8vw, 5.8rem);
+  }
+
+  .hero-services {
+    font-size: clamp(1.08rem, 1.2vw, 1.42rem);
+  }
+
+  .hero-signature {
+    max-width: 760px;
+    font-size: clamp(1.45rem, 1.9vw, 2.45rem);
+  }
+
+  .hero-button {
+    min-width: 330px;
+    min-height: 58px;
+  }
+}
+
 @media (max-width: 900px) {
   .hero {
     min-height: calc(100svh - 98px);
