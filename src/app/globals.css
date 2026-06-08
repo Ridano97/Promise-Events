@@ -46,6 +46,8 @@ html {
   scroll-padding-top: 118px;
   background: var(--cream);
   overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
