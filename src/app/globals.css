@@ -108,7 +108,7 @@ main {
 }
 
 .section-shell {
-  width: min(100% - 48px, 1500px);
+  width: min(100% - 48px, 1240px);
   margin-inline: auto;
 }
 

@@ -18,6 +18,14 @@ export default function ScrollEffects() {
       });
     };
 
+    const revealHashTarget = () => {
+      if (!window.location.hash) return;
+      const target = document.querySelector(window.location.hash);
+      if (!target) return;
+      target.querySelectorAll("[data-reveal]").forEach((item) => item.classList.add("is-visible"));
+      if (target.matches("[data-reveal]")) target.classList.add("is-visible");
+    };
+
     if (!reduceMotion) {
       document.documentElement.classList.add("reveal-enabled");
 
@@ -35,6 +43,7 @@ export default function ScrollEffects() {
 
       revealItems.forEach((item) => observer.observe(item));
       window.requestAnimationFrame(revealVisibleItems);
+      window.requestAnimationFrame(revealHashTarget);
 
       let frame = 0;
       const updateScroll = () => {
@@ -57,13 +66,16 @@ export default function ScrollEffects() {
       window.addEventListener("scroll", onScroll, { passive: true });
       window.addEventListener("resize", revealVisibleItems);
       const safetyTimer = window.setTimeout(() => {
-        revealVisibleItems();
-      }, 2200);
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+      }, 1400);
+
+      window.addEventListener("hashchange", revealHashTarget);
 
       return () => {
         observer.disconnect();
         window.removeEventListener("scroll", onScroll);
         window.removeEventListener("resize", revealVisibleItems);
+        window.removeEventListener("hashchange", revealHashTarget);
         if (frame) window.cancelAnimationFrame(frame);
         window.clearTimeout(safetyTimer);
         document.documentElement.classList.remove("reveal-enabled");

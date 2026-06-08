@@ -30,11 +30,11 @@
 }
 
 .site-header--chic .brand-mark--desktop {
-  width: clamp(168px, 14vw, 238px);
+  width: 148px;
 }
 
 .site-header--chic .brand-mark img {
-  height: 76px;
+  height: 54px;
   mix-blend-mode: multiply;
 }
 
@@ -86,7 +86,7 @@
   justify-content: start;
 }
 
-@media (min-width: 1081px) {
+@media (min-width: 1361px) {
   .site-header {
     min-height: 94px;
     padding: 6px 22px;
@@ -100,14 +100,22 @@
     height: 78px;
   }
 
+  .site-header--chic .brand-mark--desktop {
+    width: 148px;
+  }
+
+  .site-header--chic .brand-mark img {
+    height: 54px;
+  }
+
   .main-nav {
-    grid-template-columns: minmax(0, 1fr) 176px minmax(0, 1fr);
-    width: min(100%, 1180px);
-    font-size: 0.84rem;
+    grid-template-columns: minmax(0, 1fr) 164px minmax(0, 1fr);
+    width: min(100%, 1120px);
+    font-size: 0.8rem;
   }
 
   .main-nav__group {
-    gap: clamp(24px, 2vw, 34px);
+    gap: clamp(18px, 1.7vw, 28px);
   }
 
   .nav-placeholder {
@@ -178,7 +186,7 @@
   }
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1360px) {
   .site-header {
     display: grid;
     grid-template-columns: auto auto;
@@ -204,11 +212,11 @@
   }
 
   .site-header--chic .brand-mark {
-    width: 132px;
+    width: 118px;
   }
 
   .site-header--chic .brand-mark img {
-    height: 58px;
+    height: 52px;
   }
 
   .nav-toggle {
