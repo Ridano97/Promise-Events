@@ -132,7 +132,8 @@ export default function ChicBloomsExperience() {
           breakpoints={{
             620: { slidesPerView: 2.1, spaceBetween: 22 },
             980: { slidesPerView: 3.15, spaceBetween: 26 },
-            1440: { slidesPerView: 3.65, spaceBetween: 30 },
+            1440: { slidesPerView: 4, spaceBetween: 26 },
+            1800: { slidesPerView: 4.4, spaceBetween: 28 },
           }}
         >
           {bouquets.map((bouquet, index) => (

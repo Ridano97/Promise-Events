@@ -494,6 +494,117 @@
   color: var(--chic-ink);
 }
 
+@media (min-width: 1361px) {
+  .chic-hero {
+    grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.7fr);
+    width: min(calc(100% - 80px), 1080px);
+    gap: 48px;
+    padding-block: 56px 68px;
+  }
+
+  .chic-hero__brand img {
+    width: min(100%, 340px);
+  }
+
+  .chic-hero__brand h1 {
+    max-width: 390px;
+    margin: 28px 0 24px;
+    font-size: clamp(2.6rem, 3vw, 3.45rem);
+  }
+
+  .chic-hero__visual--main {
+    min-height: 430px;
+    max-height: 500px;
+  }
+
+  .chic-intro,
+  .chic-editorial {
+    width: min(calc(100% - 80px), 1120px);
+    padding-block: 96px;
+  }
+
+  .chic-intro h2 {
+    font-size: clamp(3rem, 3.8vw, 4.3rem);
+  }
+
+  .chic-intro__copy {
+    font-size: 1.1rem;
+  }
+
+  .chic-collection {
+    padding: 90px 0 140px;
+  }
+
+  .chic-collection__heading {
+    width: min(calc(100% - 80px), 1120px);
+    margin-bottom: 56px;
+  }
+
+  .chic-collection__heading h2 {
+    font-size: clamp(3.8rem, 4.8vw, 5.3rem);
+  }
+
+  .chic-rail {
+    width: min(calc(100% - 80px), 1200px);
+  }
+
+  .chic-product {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .chic-product__info {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    min-height: 104px;
+  }
+
+  .chic-product__info > div {
+    display: flex;
+    flex-direction: column;
+    min-height: 72px;
+  }
+
+  .chic-product__info h3 {
+    font-size: clamp(1.55rem, 1.55vw, 1.95rem);
+  }
+
+  .chic-product__info strong {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: start;
+    padding-top: 2px;
+    font-size: 1.2rem;
+  }
+
+  .chic-editorial__copy h2 {
+    font-size: clamp(3rem, 3.9vw, 4.45rem);
+  }
+
+  .chic-grid {
+    padding: 100px max(40px, calc((100vw - 1120px) / 2)) 150px;
+  }
+
+  .chic-grid > header h2 {
+    font-size: clamp(3.8rem, 4.5vw, 5rem);
+  }
+
+  .chic-grid-card h3 {
+    font-size: clamp(1.6rem, 1.9vw, 2.2rem);
+  }
+
+  .chic-cta {
+    width: min(calc(100% - 80px), 1080px);
+    gap: 80px;
+    padding-block: 100px;
+  }
+
+  .chic-cta h2 {
+    font-size: clamp(3.4rem, 4.3vw, 4.8rem);
+  }
+}
+
 @media (max-width: 1360px) {
   .chic-hero {
     grid-template-columns: minmax(0, 1fr) minmax(280px, 0.78fr);

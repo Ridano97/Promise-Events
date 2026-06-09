@@ -101,7 +101,7 @@
   }
 
   .site-header--chic .brand-mark--desktop {
-    width: 148px;
+    width: 138px;
   }
 
   .site-header--chic .brand-mark img {
@@ -109,13 +109,13 @@
   }
 
   .main-nav {
-    grid-template-columns: minmax(0, 1fr) 164px minmax(0, 1fr);
-    width: min(100%, 1120px);
+    grid-template-columns: minmax(0, 1fr) 176px minmax(0, 1fr);
+    width: min(calc(100% - 80px), 1040px);
     font-size: 0.8rem;
   }
 
   .main-nav__group {
-    gap: clamp(18px, 1.7vw, 28px);
+    gap: 24px;
   }
 
   .nav-placeholder {
@@ -182,7 +182,7 @@
 
 @media (min-width: 1600px) {
   .main-nav {
-    width: min(100%, 1220px);
+    width: min(calc(100% - 80px), 1040px);
   }
 }
 
