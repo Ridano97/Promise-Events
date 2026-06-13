@@ -110,27 +110,16 @@
 
   .main-nav {
     grid-template-columns: minmax(0, 1fr) 176px minmax(0, 1fr);
-    width: min(calc(100% - 80px), 1320px);
+    width: min(calc(100% - 80px), 1120px);
     font-size: 0.8rem;
   }
 
   .main-nav__group {
-    width: 100%;
-    gap: 20px;
-  }
-
-  .main-nav__group--left {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    justify-content: stretch;
-  }
-
-  .main-nav__group--right {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    justify-content: stretch;
+    gap: 28px;
   }
 
   .nav-placeholder {
-    max-width: 180px;
+    max-width: 160px;
   }
 }
 
@@ -193,7 +182,7 @@
 
 @media (min-width: 1600px) {
   .main-nav {
-    width: min(calc(100% - 80px), 1320px);
+    width: min(calc(100% - 80px), 1120px);
   }
 }
 
