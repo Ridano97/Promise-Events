@@ -20,7 +20,7 @@ export default function Hero() {
           <span>Plus belle promesse</span>
         </p>
         <TransitionLink className="hero-button" href="/#univers">
-          Notre univers
+          Découvrez nos services
         </TransitionLink>
       </div>
     </section>

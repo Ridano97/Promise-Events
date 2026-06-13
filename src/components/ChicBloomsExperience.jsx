@@ -51,6 +51,18 @@ const bouquets = [
   },
 ];
 
+const otherBouquets = [
+  { image: "/images/bouqet21.png", name: "Jardin rosé", detail: "Bouquet frais sur mesure", price: "Sur devis", note: "Délicat" },
+  { image: "/images/bouquet20.jpg", name: "Monogramme rouge", detail: "Bouquet personnalisé", price: "Sur devis", note: "Signature" },
+  { image: "/images/bouquet22.jpg", name: "Nuage poudré", detail: "Tons pastel et fleurs fraîches", price: "Sur devis", note: "Romantique" },
+  { image: "/images/bouquet23.jpg", name: "Soleil d'ambre", detail: "Composition chaleureuse", price: "Sur devis", note: "Solaire" },
+  { image: "/images/bouquet24.jpg", name: "Duo velours", detail: "Roses rouges et blanches", price: "Sur devis", note: "Graphique" },
+  { image: "/images/bouquet25.jpg", name: "Jardin pastel", detail: "Fleurs de saison", price: "Sur devis", note: "Poétique" },
+  { image: "/images/bouquet26.jpg", name: "Rouge absolu", detail: "Roses rouges de caractère", price: "Sur devis", note: "Intense" },
+  { image: "/images/bouquet27.jpg", name: "Roseraie poudrée", detail: "Bouquet tendre et généreux", price: "Sur devis", note: "Élégant" },
+  { image: "/images/bouquet28.jpg", name: "Cœur rubis", detail: "Composition rouge sur mesure", price: "Sur devis", note: "Précieux" },
+];
+
 const reveal = {
   initial: { opacity: 0, y: 70, clipPath: "inset(12% 0 0 0)" },
   whileInView: { opacity: 1, y: 0, clipPath: "inset(0% 0 0 0)" },
@@ -110,6 +122,48 @@ export default function ChicBloomsExperience() {
         </motion.p>
       </section>
 
+      <section className="chic-welcome">
+        <motion.div {...reveal} className="chic-welcome__heading">
+          <p className="chic-label">L'univers Chic Blooms</p>
+          <h2>Bienvenue dans l’univers de <em>Chic Blooms</em></h2>
+        </motion.div>
+
+        <motion.div {...reveal} className="chic-welcome__copy">
+          <span>01</span>
+          <p>
+            Du bouquet délicat aux créations plus majestueuses, nous réalisons des compositions
+            confectionnées sur mesure avec une attention particulière portée à chaque détail.
+          </p>
+          <p>
+            Nos bouquets évoluent au fil des saisons et des floraisons, tout en mettant à
+            l’honneur la rose, éternel symbole d’amour et de raffinement.
+          </p>
+        </motion.div>
+
+        <motion.aside {...reveal} className="chic-order">
+          <span>02</span>
+          <h3>Comment commander&nbsp;?</h3>
+          <p>
+            Les prises de commande s’effectuent uniquement via WhatsApp. Merci de répondre au
+            message automatique afin de faciliter le traitement de votre demande.
+          </p>
+          <p>
+            Pour les bouquets de moins de 30 roses, la création est possible uniquement en
+            retrait. À partir de 30 roses, la livraison est disponible dans un rayon de 50 km
+            autour de Genève, selon le lieu de prestation. Des frais de déplacement peuvent
+            s’appliquer.
+          </p>
+          <a
+            className="chic-text-link"
+            href="https://wa.me/33773433824"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Commander via WhatsApp <ArrowUpRight size={17} />
+          </a>
+        </motion.aside>
+      </section>
+
       <section className="chic-collection" id="collection">
         <header className="chic-collection__heading">
           <motion.div {...reveal}>
@@ -157,25 +211,58 @@ export default function ChicBloomsExperience() {
         </Swiper>
       </section>
 
-      <section className="chic-editorial">
-        <motion.figure {...reveal} className="chic-editorial__large">
-          <img src="/images/bouquet2.png" alt="Bouquet de lys orné de perles" />
-        </motion.figure>
-        <motion.div {...reveal} className="chic-editorial__copy">
-          <p className="chic-label">Le geste Chic Blooms</p>
-          <h2>Fleurs fraîches.<br /><em>Détails précieux.</em></h2>
-          <p>
-            Rubans de satin, perles délicates, tiges sculpturales : les finitions sont choisies
-            pour prolonger la robe, le bijou et l’atmosphère de votre journée.
-          </p>
-          <TransitionLink className="chic-text-link" href="/contact">
-            Imaginer mon bouquet <ArrowUpRight size={17} />
-          </TransitionLink>
-        </motion.div>
-        <motion.figure {...reveal} className="chic-editorial__small">
-          <img src="/images/bouquet6.JPG" alt="Détail d’un bouquet de callas perlé" />
-          <figcaption>Chaque détail compte.</figcaption>
-        </motion.figure>
+      <section className="chic-collection chic-collection--other">
+        <header className="chic-collection__heading">
+          <motion.div {...reveal}>
+            <p className="chic-label">Créations pour chaque occasion</p>
+            <h2>Nos autres réalisations de bouquet</h2>
+          </motion.div>
+          <motion.p {...reveal}>
+            Des compositions fraîches et singulières, imaginées sur mesure.
+          </motion.p>
+        </header>
+        <Swiper
+          className="chic-rail"
+          modules={[Autoplay, FreeMode]}
+          freeMode={{ enabled: true, momentumRatio: 0.8 }}
+          grabCursor
+          loop
+          speed={1100}
+          autoplay={{ delay: 3200, disableOnInteraction: false, pauseOnMouseEnter: true }}
+          spaceBetween={18}
+          slidesPerView={1.12}
+          breakpoints={{
+            620: { slidesPerView: 2.1, spaceBetween: 22 },
+            980: { slidesPerView: 3.15, spaceBetween: 26 },
+            1440: { slidesPerView: 4, spaceBetween: 26 },
+            1800: { slidesPerView: 4.4, spaceBetween: 28 },
+          }}
+        >
+          {otherBouquets.map((bouquet, index) => (
+            <SwiperSlide key={bouquet.image}>
+              <motion.article
+                className="chic-product"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.18 }}
+                transition={{ duration: 0.72, delay: Math.min(index * 0.04, 0.2) }}
+              >
+                <div className="chic-product__media">
+                  <img src={bouquet.image} alt={bouquet.name} />
+                  <span>{bouquet.note}</span>
+                  <b>{String(index + 1).padStart(2, "0")}</b>
+                </div>
+                <div className="chic-product__info">
+                  <div>
+                    <h3>{bouquet.name}</h3>
+                    <p>{bouquet.detail}</p>
+                  </div>
+                  <strong>{bouquet.price}</strong>
+                </div>
+              </motion.article>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </section>
 
       <section className="chic-cta">
