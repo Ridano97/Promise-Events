@@ -459,7 +459,7 @@
   }
 
   .contact-hero__copy h1 {
-    font-size: clamp(3.6rem, 18vw, 5.2rem);
+    font-size: clamp(3.15rem, 15.5vw, 4.6rem);
   }
 
   .contact-hero__film {
@@ -483,13 +483,19 @@
   }
 
   .contact-info h2 {
-    font-size: clamp(3.6rem, 18vw, 5.4rem);
+    font-size: clamp(3.15rem, 15.5vw, 4.7rem);
   }
 
   .contact-form {
+    order: 1;
     grid-template-columns: 1fr;
     gap: 20px;
     padding: 28px 16px;
+    scroll-margin-top: 112px;
+  }
+
+  .contact-info {
+    order: 2;
   }
 
   .choice-field div {

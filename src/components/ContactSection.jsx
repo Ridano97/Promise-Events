@@ -106,6 +106,7 @@ export default function ContactSection() {
       <motion.form
         className="contact-form"
         data-reveal
+        id="project-form"
         onSubmit={openWhatsApp}
         style={{ "--reveal-delay": "120ms" }}
         initial={false}

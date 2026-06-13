@@ -18,7 +18,7 @@ export default function ContactHero() {
           Une date, une envie, une atmosphère. Confiez-nous les premiers détails, nous imaginons
           la suite avec vous.
         </p>
-        <a href="#contact">
+        <a href="#project-form">
           Commencer votre projet <ArrowDown size={16} />
         </a>
       </motion.div>

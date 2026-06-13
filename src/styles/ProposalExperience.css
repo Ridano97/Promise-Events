@@ -618,7 +618,7 @@
 
   .proposal-hero h1 {
     margin-top: 22px;
-    font-size: clamp(4rem, 21vw, 6rem);
+    font-size: clamp(3.5rem, 18vw, 5.2rem);
     white-space: normal;
   }
 
@@ -655,7 +655,7 @@
   }
 
   .proposal-film__copy h2 {
-    font-size: clamp(3rem, 16vw, 4.8rem);
+    font-size: clamp(2.65rem, 14vw, 4.2rem);
   }
 
   .proposal-scenes__grid,
@@ -665,7 +665,7 @@
 
   .proposal-section-heading h2,
   .proposal-pack__heading h2 {
-    font-size: clamp(2.7rem, 14vw, 4.2rem);
+    font-size: clamp(2.4rem, 12vw, 3.7rem);
   }
 
   .proposal-pack {
