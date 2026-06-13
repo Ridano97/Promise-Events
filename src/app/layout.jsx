@@ -81,6 +81,11 @@ export const metadata = {
   title: "Promise Events - Décoration événementielle",
   description:
     "Décoration événementielle, demandes en mariage et compositions florales haut de gamme.",
+  icons: {
+    icon: "/images/H.png",
+    shortcut: "/images/H.png",
+    apple: "/images/H.png",
+  },
 };
 
 export const viewport = {

@@ -10,7 +10,6 @@ import {
   MessageCircle,
   Palette,
   Sparkles,
-  Upload,
 } from "lucide-react";
 import { TransitionLink } from "./RouteTransition";
 
@@ -176,12 +175,6 @@ export default function ContactSection() {
         <label className="form-wide">
           <span className="label-icon"><Palette size={16} /> Couleurs souhaitées</span>
           <input type="text" name="colors" placeholder="Blanc, rouge, doré, nude..." />
-        </label>
-        <label className="form-wide file-drop">
-          <Upload size={20} />
-          <span>Inspirations & photos</span>
-          <input type="file" name="inspirations" multiple />
-          <small>Vous pourrez joindre vos images directement dans la conversation ouverte.</small>
         </label>
         <label className="form-wide">
           Budget prévu
