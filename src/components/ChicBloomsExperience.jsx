@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { Autoplay, FreeMode } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { TransitionLink } from "./RouteTransition";
 
 const bouquets = [
   {
@@ -271,9 +270,26 @@ export default function ChicBloomsExperience() {
           <p className="chic-label">Sur rendez-vous</p>
           <h2>Votre bouquet,<br /><em>votre signature.</em></h2>
           <p>Parlez-nous de votre robe, de votre cérémonie et de la fleur qui vous ressemble.</p>
-          <TransitionLink className="chic-button" href="/contact">
+          <div className="chic-cta__conditions">
+            <p className="chic-label">Conditions de commande</p>
+            <p>
+              Les commandes doivent être effectuées minimum 48 heures à l’avance afin de garantir
+              la disponibilité des fleurs et la meilleure qualité de réalisation.
+            </p>
+            <p>
+              Afin de valider votre commande, un acompte de 30 % sera demandé. Aucune commande ne
+              sera confirmée sans le versement de cet acompte. Une fois l’acompte reçu, nous
+              convenons ensemble de l’heure du retrait ou de la livraison.
+            </p>
+          </div>
+          <a
+            className="chic-button"
+            href="https://wa.me/33773433824?text=Bonjour%20Chic%20Blooms%2C%20je%20souhaite%20cr%C3%A9er%20mon%20bouquet."
+            target="_blank"
+            rel="noreferrer"
+          >
             Créer mon bouquet <ArrowUpRight size={18} />
-          </TransitionLink>
+          </a>
         </motion.div>
       </section>
     </>

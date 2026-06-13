@@ -357,8 +357,27 @@
 .chic-product__media {
   position: relative;
   overflow: hidden;
+  isolation: isolate;
   aspect-ratio: 0.76;
   background: var(--chic-paper);
+}
+
+.chic-product__media::after {
+  content: "";
+  position: absolute;
+  inset: -25% -70%;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(
+    112deg,
+    transparent 38%,
+    rgba(255, 255, 255, 0.06) 44%,
+    rgba(255, 255, 255, 0.34) 50%,
+    rgba(255, 255, 255, 0.08) 56%,
+    transparent 62%
+  );
+  transform: translateX(-54%) rotate(4deg);
+  opacity: 0;
 }
 
 .chic-product__media img {
@@ -368,9 +387,32 @@
   transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), filter 600ms ease;
 }
 
-.chic-product:hover .chic-product__media img {
-  transform: scale(1.045);
-  filter: saturate(1.05);
+@media (hover: hover) and (pointer: fine) {
+  .chic-product:hover .chic-product__media img {
+    transform: scale(1.045);
+    filter: saturate(1.05) brightness(1.025);
+  }
+
+  .chic-product:hover .chic-product__media::after {
+    opacity: 1;
+    animation: chicMirrorHighlight 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+@keyframes chicMirrorHighlight {
+  from {
+    transform: translateX(-54%) rotate(4deg);
+  }
+
+  to {
+    transform: translateX(54%) rotate(4deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chic-product__media::after {
+    display: none;
+  }
 }
 
 .chic-product__media span,
@@ -576,6 +618,30 @@
   margin: 0 0 34px;
   color: var(--chic-muted);
   line-height: 1.7;
+}
+
+.chic-cta__conditions {
+  max-width: 620px;
+  margin: 0 0 34px;
+  padding: 24px 0;
+  border-block: 1px solid var(--chic-line);
+}
+
+.chic-cta__conditions .chic-label {
+  margin-bottom: 16px;
+  color: var(--chic-red);
+}
+
+.chic-cta .chic-cta__conditions > p:not(.chic-label) {
+  max-width: none;
+  margin: 0;
+  color: var(--chic-muted);
+  font-size: 0.98rem;
+  line-height: 1.68;
+}
+
+.chic-cta .chic-cta__conditions > p + p {
+  margin-top: 12px;
 }
 
 .chic-button {
@@ -988,6 +1054,15 @@
 
   .chic-cta h2 {
     font-size: clamp(3rem, 14vw, 4.8rem);
+  }
+
+  .chic-cta__conditions {
+    margin-bottom: 28px;
+    padding-block: 22px;
+  }
+
+  .chic-cta .chic-cta__conditions > p:not(.chic-label) {
+    font-size: 0.94rem;
   }
 }
 
