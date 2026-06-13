@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   Calendar,
   Gem,
@@ -12,7 +12,6 @@ import {
   Sparkles,
   Upload,
 } from "lucide-react";
-import { useEffect, useState } from "react";
 import { TransitionLink } from "./RouteTransition";
 
 const services = [
@@ -29,19 +28,6 @@ const services = [
 ];
 
 const styles = ["Romantique", "Chic & élégant", "Bohème", "Moderne", "Minimaliste", "Luxe"];
-
-const identities = [
-  {
-    src: "/images/accueil2.jpg",
-    alt: "Mise en scène Promise Events",
-    label: "Décoration & scénographie",
-  },
-  {
-    src: "/images/bouquet4.png",
-    alt: "Création florale Chic Blooms",
-    label: "Créations florales",
-  },
-];
 
 function buildMessage(form) {
   const data = new FormData(form);
@@ -70,16 +56,6 @@ function buildMessage(form) {
 }
 
 export default function ContactSection() {
-  const [activeIdentity, setActiveIdentity] = useState(0);
-
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setActiveIdentity((current) => (current + 1) % identities.length);
-    }, 3200);
-
-    return () => window.clearInterval(timer);
-  }, []);
-
   const openWhatsApp = (event) => {
     event.preventDefault();
     const message = buildMessage(event.currentTarget);
@@ -94,8 +70,6 @@ export default function ContactSection() {
       "Nouvelle demande via le site Promise Events",
     )}&body=${encodeURIComponent(message)}`;
   };
-
-  const identity = identities[activeIdentity];
 
   return (
     <section className="contact-section" id="contact">
@@ -122,28 +96,9 @@ export default function ContactSection() {
         </dl>
 
         <div className="contact-identity" data-reveal="image">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={identity.alt}
-              initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              exit={{ opacity: 0, y: -18, filter: "blur(8px)" }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <img src={identity.src} alt={identity.alt} />
-              <span>{identity.label}</span>
-            </motion.div>
-          </AnimatePresence>
-          <div aria-label="Identité affichée" className="contact-identity__dots">
-            {identities.map((item, index) => (
-              <button
-                aria-label={`Afficher ${item.alt}`}
-                className={index === activeIdentity ? "is-active" : ""}
-                key={item.alt}
-                onClick={() => setActiveIdentity(index)}
-                type="button"
-              />
-            ))}
+          <div>
+            <img src="/images/hanna.jpg" alt="Hanna, créatrice de Promise Events" />
+            <span>Hanna · Créatrice de Promise Events</span>
           </div>
         </div>
       </div>

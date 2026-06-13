@@ -161,6 +161,58 @@
   mix-blend-mode: screen;
 }
 
+@media (min-width: 861px) {
+  .site-footer {
+    gap: clamp(36px, 5vw, 90px);
+    padding: clamp(38px, 4vw, 58px) clamp(24px, 4vw, 72px) 22px;
+  }
+
+  .footer-brand img {
+    width: 94px;
+    margin-bottom: 18px;
+  }
+
+  .footer-claim {
+    font-size: clamp(1.65rem, 2vw, 2.6rem);
+  }
+
+  .footer-intro {
+    margin-top: 16px;
+    font-size: 1rem;
+  }
+
+  .footer-heading {
+    margin-bottom: 18px;
+    font-size: 0.92rem;
+  }
+
+  .site-footer nav {
+    gap: 11px;
+  }
+
+  .site-footer nav a,
+  .site-footer nav span {
+    font-size: 1.08rem;
+  }
+
+  .footer-social-list a {
+    padding-block: 10px;
+  }
+
+  .footer-social-list strong {
+    font-size: 1.05rem;
+  }
+
+  .footer-social-list small {
+    font-size: 0.86rem;
+  }
+
+  .footer-credit {
+    margin-top: 18px;
+    padding-top: 16px;
+  }
+}
+
 @media (max-width: 1160px) {
   .site-footer {
     grid-template-columns: minmax(220px, 0.75fr) minmax(170px, 0.5fr) minmax(280px, 0.9fr);

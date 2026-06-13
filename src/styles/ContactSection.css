@@ -202,28 +202,6 @@
   text-transform: uppercase;
 }
 
-.contact-identity__dots {
-  position: absolute;
-  right: 16px;
-  bottom: 16px;
-  z-index: 3;
-  display: flex;
-  gap: 7px;
-}
-
-.contact-identity__dots button {
-  width: 26px;
-  height: 3px;
-  padding: 0;
-  border: 0;
-  background: rgba(46, 40, 34, 0.26);
-  cursor: pointer;
-}
-
-.contact-identity__dots button.is-active {
-  background: var(--rose);
-}
-
 .contact-form {
   position: relative;
   isolation: isolate;

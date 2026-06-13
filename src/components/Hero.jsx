@@ -19,7 +19,7 @@ export default function Hero() {
           <span>L'art de sublimer vos</span>
           <span>Plus belle promesse</span>
         </p>
-        <TransitionLink className="hero-button" href="/#univers">
+        <TransitionLink className="hero-button" href="/#mariage">
           Découvrez nos services
         </TransitionLink>
       </div>

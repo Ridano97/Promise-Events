@@ -11,6 +11,7 @@ export function RouteTransitionProvider({ children }) {
   const [transition, setTransition] = useState(null);
   const timers = useRef([]);
   const previousPath = useRef(pathname);
+  const pendingAnchor = useRef(null);
 
   const clearTimers = () => {
     timers.current.forEach((timer) => window.clearTimeout(timer));
@@ -20,7 +21,25 @@ export function RouteTransitionProvider({ children }) {
   useEffect(() => {
     if (previousPath.current !== pathname) {
       previousPath.current = pathname;
-      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      const targetHash = pendingAnchor.current;
+      pendingAnchor.current = null;
+
+      if (!targetHash) {
+        window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+        return;
+      }
+
+      window.requestAnimationFrame(() => {
+        document.getElementById(decodeURIComponent(targetHash.slice(1)))?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+        window.dispatchEvent(
+          new CustomEvent("promise:anchor-arrived", {
+            detail: { hash: targetHash },
+          }),
+        );
+      });
     }
   }, [pathname]);
 
@@ -28,7 +47,8 @@ export function RouteTransitionProvider({ children }) {
 
   const navigate = useCallback((href, label, element) => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const targetHash = new URL(href, window.location.href).hash;
+    const targetUrl = new URL(href, window.location.href);
+    const targetHash = targetUrl.hash;
     const announceAnchorArrival = () => {
       window.dispatchEvent(
         new CustomEvent("promise:anchor-arrived", {
@@ -37,14 +57,31 @@ export function RouteTransitionProvider({ children }) {
       );
     };
 
+    if (targetHash) {
+      const scrollToAnchor = () => {
+        const target = document.getElementById(decodeURIComponent(targetHash.slice(1)));
+        if (!target) return false;
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        announceAnchorArrival();
+        return true;
+      };
+
+      clearTimers();
+      setTransition(null);
+
+      if (targetUrl.pathname === window.location.pathname) {
+        window.history.pushState(null, "", `${targetUrl.pathname}${targetUrl.search}${targetHash}`);
+        scrollToAnchor();
+        return;
+      }
+
+      pendingAnchor.current = targetHash;
+      router.push(`${targetUrl.pathname}${targetUrl.search}${targetHash}`);
+      return;
+    }
+
     if (reduceMotion) {
       router.push(href);
-      if (targetHash) {
-        window.setTimeout(() => {
-          document.querySelector(targetHash)?.scrollIntoView({ behavior: "smooth" });
-          announceAnchorArrival();
-        }, 80);
-      }
       return;
     }
 
@@ -69,14 +106,6 @@ export function RouteTransitionProvider({ children }) {
       }, 560),
     );
     timers.current.push(window.setTimeout(() => router.push(href), 920));
-    if (targetHash) {
-      timers.current.push(
-        window.setTimeout(() => {
-          document.querySelector(targetHash)?.scrollIntoView({ behavior: "smooth", block: "start" });
-          announceAnchorArrival();
-        }, 1260),
-      );
-    }
     timers.current.push(
       window.setTimeout(() => {
         setTransition((current) => (current ? { ...current, phase: "reveal" } : current));

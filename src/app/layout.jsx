@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import { RouteTransitionProvider } from "../components/RouteTransition";
 import ScrollEffects from "../components/ScrollEffects";
 import LuxuryEffects from "../components/LuxuryEffects";
+import BackToTop from "../components/BackToTop";
 
 const nativeTransitionScript = `
 (() => {
@@ -68,7 +69,7 @@ const nativeTransitionScript = `
 
     const url = new URL(anchor.href, window.location.href);
     if (url.origin !== window.location.origin) return;
-    if (url.pathname === window.location.pathname && url.hash) return;
+    if (url.hash) return;
 
     event.preventDefault();
     openLetter(anchor, url);
@@ -98,6 +99,7 @@ export default function RootLayout({ children }) {
           <Header />
           {children}
           <Footer />
+          <BackToTop />
         </RouteTransitionProvider>
       </body>
     </html>
