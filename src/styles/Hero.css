@@ -71,7 +71,7 @@
   margin: clamp(20px, 2.4vw, 30px) 0 0;
   color: rgba(255, 253, 248, 0.92);
   font-family: var(--serif);
-  font-size: clamp(1.14rem, 1.54vw, 1.7rem);
+  font-size: clamp(1.35rem, 2vw, 2.2rem);
   font-weight: 600;
   text-transform: uppercase;
   text-shadow: 0 10px 32px rgba(17, 14, 12, 0.4);
@@ -157,7 +157,7 @@
 
   .hero-services {
     margin-top: 18px;
-    font-size: clamp(1rem, 0.95vw, 1.18rem);
+    font-size: clamp(1.2rem, 1.35vw, 1.55rem);
   }
 
   .hero-signature {
@@ -191,7 +191,7 @@
 
   .hero-services {
     margin-top: 18px;
-    font-size: clamp(1rem, 1.15vw, 1.16rem);
+    font-size: clamp(1.18rem, 1.5vw, 1.5rem);
   }
 
   .hero-signature {
@@ -237,19 +237,22 @@
 
   .hero-copy {
     width: min(100% - 28px, 1500px);
-    padding-block: 56px 64px;
+    padding-block: 38px 44px;
   }
 
   .hero-title {
-    font-size: clamp(2.2rem, 10.2vw, 3.35rem);
+    font-size: clamp(1.95rem, 9.8vw, 3.15rem);
     line-height: 0.9;
+    white-space: nowrap;
   }
 
   .hero-services {
-    max-width: 300px;
+    max-width: none;
     margin-top: 18px;
-    font-size: 1.06rem;
-    line-height: 1.5;
+    font-size: clamp(0.62rem, 3.05vw, 0.86rem);
+    letter-spacing: -0.025em;
+    line-height: 1.35;
+    white-space: nowrap;
   }
 
   .hero-signature {

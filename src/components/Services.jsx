@@ -1,118 +1,82 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 const services = [
   {
-    number: "01",
     title: "Demande en mariage",
-    text: "Décoration complète avec installation incluse, 100 % personnalisable selon vos envies, pour créer une ambiance romantique et inoubliable.",
     image: "/images/accueil2.jpg",
-    alt: "Décor de demande en mariage avec bougies et fleurs blanches",
   },
   {
-    number: "02",
     title: "Composition florale",
-    text: "Créations florales sur mesure, du bouquet de demande à celui de la mariée, afin d'apporter une parfaite harmonie à chaque mise en scène.",
     image: "/images/bouquet4.png",
-    alt: "Composition florale raffinée pour événement",
-    position: "center center",
   },
   {
-    number: "03",
     title: "Projet événementiel",
-    text: "Mariages, décoration de chambre des mariés ou scénographies florales : chaque mise en scène est imaginée avec sensibilité et attention.",
     image: "/images/fete.png",
-    alt: "Scénographie événementielle élégante",
   },
   {
-    number: "04",
     title: "Location de matériel de décoration",
-    text: "Arches, colonnes, bougeoirs, supports floraux et éléments de décor à louer pour composer une mise en scène élégante et cohérente.",
     image: "/images/decorationevenementiel.png",
-    alt: "Matériel de décoration événementielle à louer",
   },
 ];
 
 export default function Services() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const [isManualSelection, setIsManualSelection] = useState(false);
-  const activeService = services[activeIndex];
-
-  useEffect(() => {
-    if (isPaused || isManualSelection) {
-      return undefined;
-    }
-
-    const timer = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % services.length);
-    }, 6000);
-
-    return () => window.clearInterval(timer);
-  }, [activeIndex, isManualSelection, isPaused]);
-
-  const selectService = (index) => {
-    setActiveIndex(index);
-    setIsManualSelection(true);
-    setIsPaused(true);
-  };
-
-  const resumeAutoIfNeeded = () => {
-    if (!isManualSelection) {
-      setIsPaused(false);
-    }
-  };
-
   return (
-    <section className="services section-shell" id="mariage">
-      <div
-        className="services-media"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={resumeAutoIfNeeded}
+    <section className="services" id="mariage">
+      <motion.header
+        className="services-intro"
+        initial={{ opacity: 0, y: 32 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.35 }}
+        transition={{ duration: 1.05, ease: [0.22, 1, 0.36, 1] }}
       >
-        <AnimatePresence mode="wait">
-          <motion.img
-            key={activeService.image}
-            src={activeService.image}
-            alt={activeService.alt}
-            initial={{ opacity: 0, scale: 1.05, filter: "blur(12px)" }}
-            animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-            exit={{ opacity: 0, scale: 0.985, filter: "blur(10px)" }}
-            transition={{ duration: 1.35, ease: [0.22, 1, 0.36, 1] }}
-            style={{
-              objectFit: activeService.fit || "cover",
-              objectPosition: activeService.position || "center 52%",
-              padding: activeService.padding || 0,
-            }}
-          />
-        </AnimatePresence>
-      </div>
-      <div className="services-content">
-        <p className="services-label" data-reveal>
-          Nos services <span aria-hidden="true">*</span>
-        </p>
-        <div className="services-list">
-          {services.map((service, index) => (
-            <button
-              type="button"
-              className={`service-row ${activeIndex === index ? "is-selected" : ""}`}
-              key={service.number}
-              aria-pressed={activeIndex === index}
-              onClick={() => selectService(index)}
-              onMouseEnter={() => setIsPaused(true)}
-              onMouseLeave={resumeAutoIfNeeded}
-              style={{ "--reveal-delay": `${index * 90}ms` }}
-            >
-              <span>{service.number}</span>
-              <div>
-                <h3>{service.title}</h3>
-                <p>{service.text}</p>
-              </div>
-            </button>
-          ))}
+        <p className="services-intro__welcome">Bienvenue dans l&apos;univers de Promise Events</p>
+        <div className="services-intro__story">
+          <p>Ici commence la promesse d&apos;un moment unique et parfaitement sublimé.</p>
+          <p>
+            Créatrice d&apos;expériences sur mesure, je fais de vos instants les plus précieux des
+            souvenirs inoubliables.
+          </p>
+          <p>
+            À chaque étape de votre mariage, je vous accompagne : de la demande en mariage à la
+            décoration du jour J, jusqu&apos;à la décoration de la chambre des mariés. Chaque
+            détail est imaginé avec soin, selon vos envies.
+          </p>
+          <p>
+            Forte d&apos;une expertise florale, je réalise des créations florales sur mesure, du
+            bouquet de demande à celui de la mariée, afin d&apos;apporter une parfaite harmonie à
+            chaque mise en scène.
+          </p>
+          <p>
+            J&apos;interviens en Suisse et dans la région Auvergne-Rhône-Alpes pour donner vie à
+            vos projets.
+          </p>
+          <strong>Confiez-moi la création d&apos;un moment inoubliable.</strong>
         </div>
+        <h2>Nos services</h2>
+      </motion.header>
+
+      <div className="services-grid">
+        {services.map((service, index) => (
+          <motion.div
+            key={service.title}
+            initial={{ opacity: 0, y: 44 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 1, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <article className="service-card">
+              <div className="service-card__media">
+                <Image src={service.image} alt="" fill sizes="(max-width: 760px) 100vw, 25vw" />
+              </div>
+              <div className="service-card__copy">
+                <h3>{service.title}</h3>
+              </div>
+            </article>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
 
 export default function ContactHero() {
   return (
@@ -12,15 +11,7 @@ export default function ContactHero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
       >
-        <p className="eyebrow">Contact · Promise Events</p>
         <h1>Racontez-nous<br />votre projet.</h1>
-        <p>
-          Une date, une envie, une atmosphère. Confiez-nous les premiers détails, nous imaginons
-          la suite avec vous.
-        </p>
-        <a href="#project-form">
-          Commencer votre projet <ArrowDown size={16} />
-        </a>
       </motion.div>
 
       <motion.div
@@ -36,7 +27,7 @@ export default function ContactHero() {
           allowFullScreen
         />
         <div className="contact-hero__veil" />
-        <p><span>01</span> Votre histoire commence ici</p>
+        <p>Votre histoire commence ici</p>
       </motion.div>
     </section>
   );

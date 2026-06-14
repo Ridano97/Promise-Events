@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { TransitionLink } from "./RouteTransition";
 
 const proposalBouquets = [
-  ["Décoration de demande en mariage", "400 EUR", "/images/mariage2.png"],
+  ["Décoration de demande en mariage", "450 EUR", "/images/mariage2.png"],
   ["Bouquet de roses rouges Portanova", "110 EUR", "/images/mariage3.png"],
   ["Photos et vidéos souvenirs", "30 EUR", "/images/mariage1.png"],
 ];
@@ -67,7 +67,7 @@ export default function Gallery() {
       <div className="pack-panel" data-reveal>
         <p className="eyebrow">Pack demande en mariage complet</p>
         <h3>Décoration complète, bouquet, photos, vidéos et musique d'ambiance.</h3>
-        <span>Tarif du pack complet : 540 EUR</span>
+        <span>Tarif du pack complet : 590 EUR</span>
       </div>
 
       <div className="gallery-heading bouquet-heading">

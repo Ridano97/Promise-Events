@@ -32,7 +32,7 @@ function SnapchatIcon() {
 
 const footerLinks = [
   ["Accueil", "/"],
-  ["Univers Promise Events", "/#univers"],
+  ["Univers Promise Events", "/univers-promise-events"],
   ["Chic Blooms x Promise Events", "/chic-blooms"],
   ["Nos services", "/#mariage"],
   ["Demande en mariage", "/demande-en-mariage"],

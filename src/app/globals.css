@@ -9,6 +9,7 @@
 @import "../styles/PromiseIntro.css";
 @import "../styles/StatsCounter.css";
 @import "../styles/Services.css";
+@import "../styles/UniversePage.css";
 @import "../styles/ScrollExperience.css";
 @import "../styles/Story.css";
 @import "../styles/Gallery.css";
@@ -33,7 +34,8 @@
   --shadow: 0 28px 70px rgba(46, 40, 34, 0.18);
   --serif: "Didot", "Bodoni 72", "Bodoni 72 Oldstyle", "Iowan Old Style", Georgia,
     serif;
-  --sans: "Avenir Next", Avenir, "Helvetica Neue", Arial, sans-serif;
+  --sans: "Didot", "Bodoni 72", "Bodoni 72 Oldstyle", "Iowan Old Style", Georgia,
+    serif;
   --mono: "SF Mono", "Courier New", monospace;
 }
 
@@ -295,6 +297,54 @@ main {
   .button-ghost {
     min-height: 52px;
     padding-inline: 26px;
+  }
+}
+
+@media (max-width: 620px) {
+  .services {
+    padding-block: 42px 50px;
+  }
+
+  .services-intro {
+    margin-bottom: 26px;
+  }
+
+  .chic-creations,
+  .chic-collection {
+    padding-block: 42px 54px;
+  }
+
+  .chic-welcome {
+    margin-block: 32px;
+  }
+
+  .chic-cta {
+    padding-block: 34px;
+  }
+
+  .proposal-scenes,
+  .proposal-bouquets {
+    padding-block: 44px;
+  }
+
+  .proposal-pack {
+    margin-block: 30px;
+  }
+
+  .proposal-film {
+    padding-block: 20px 44px;
+  }
+
+  .contact-section {
+    padding-block: 30px;
+  }
+
+  .universe-page {
+    padding-block: 22px 46px;
+  }
+
+  .universe-page__story {
+    padding-top: 26px;
   }
 }
 

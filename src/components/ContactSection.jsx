@@ -90,7 +90,7 @@ export default function ContactSection() {
           </div>
           <div>
             <dt>Secteur d'intervention</dt>
-            <dd>Annemasse · Genève · Lausanne · Annecy</dd>
+            <dd>Genève &amp; 50 km aux alentours</dd>
           </div>
         </dl>
 

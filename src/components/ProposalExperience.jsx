@@ -1,5 +1,3 @@
-import { TransitionLink } from "./RouteTransition";
-
 const scenes = [
   { src: "/images/mariage2.png", alt: "Demande en mariage devant une arche de roses rouges" },
   { src: "/images/mariage1.png", alt: "Couple devant une arche de roses rouges au bord du lac" },
@@ -14,34 +12,31 @@ const bouquets = [
     price: "225 €",
   },
   {
-    src: "/images/bouquetrouge2.jpg",
-    title: "Bouquet de 50 roses Équateur",
-    detail: "Composition de roses rouges",
-    price: "225 €",
-  },
-  {
     src: "/images/mariage3.png",
     title: "Bouquet de 25 roses Portanova",
     detail: "Bouquet de roses rouges",
     price: "110 €",
   },
+  {
+    src: "/images/bouquetrouge2.jpg",
+    title: "Bouquet de 50 roses rouges",
+    detail: "Composition florale généreuse",
+    price: "225 €",
+  },
 ];
 
 const packItems = [
   {
-    number: "01",
     title: "Décoration complète",
     text: "Installation incluse, 100 % personnalisable.",
-    price: "400 €",
+    price: "450 €",
   },
   {
-    number: "02",
     title: "Bouquet de roses rouges Portanova",
     text: "25 roses rouges incluses, personnalisables avec possibilité d'ajouter des roses sur demande.",
     price: "110 €",
   },
   {
-    number: "03",
     title: "Photos et vidéos souvenirs",
     text: "Vidéo lors de la découverte du lieu et de la demande en mariage, photos et vidéos à volonté.",
     price: "30 €",
@@ -53,22 +48,10 @@ export default function ProposalExperience() {
     <>
       <section className="proposal-hero">
         <div className="proposal-hero__copy" data-proposal-hero-copy>
-          <p className="proposal-kicker">Promise Events · Expérience signature</p>
           <h1>
             Demande
             <span>en mariage</span>
           </h1>
-          <p className="proposal-hero__lead">
-            Une scénographie pensée autour de votre histoire, pour faire de cet instant une
-            promesse inoubliable.
-          </p>
-          <div className="proposal-hero__details">
-            <span>Décoration sur mesure</span>
-            <span>À partir de 400 €</span>
-          </div>
-          <TransitionLink className="proposal-link" href="/contact">
-            Imaginer votre demande
-          </TransitionLink>
         </div>
 
         <figure className="proposal-hero__media" data-proposal-hero-media>
@@ -79,7 +62,6 @@ export default function ProposalExperience() {
             allowFullScreen
           />
           <figcaption>
-            <span>01</span>
             <p>Une demande imaginée comme une scène de cinéma</p>
           </figcaption>
         </figure>
@@ -103,8 +85,28 @@ export default function ProposalExperience() {
               data-proposal-scene
             >
               <img src={scene.src} alt={scene.alt} />
-              <figcaption>0{index + 1}</figcaption>
             </figure>
+          ))}
+        </div>
+      </section>
+
+      <section className="proposal-pack" data-proposal-pack>
+        <div className="proposal-pack__heading" data-reveal>
+          <p className="proposal-kicker">Une expérience clé en main</p>
+          <h2>Pack demande en mariage complet</h2>
+          <div className="proposal-pack__price">
+            <span>Tarif du pack complet</span>
+            <strong>590 €</strong>
+          </div>
+        </div>
+
+        <div className="proposal-pack__items">
+          {packItems.map((item) => (
+            <article key={item.title} data-proposal-pack-item>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+              <strong>{item.price}</strong>
+            </article>
           ))}
         </div>
       </section>
@@ -116,22 +118,10 @@ export default function ProposalExperience() {
         </header>
 
         <div className="proposal-bouquets__grid" data-proposal-bouquet-grid>
-          {bouquets.map((bouquet, index) => (
-            <article
-              className="proposal-bouquet"
-              key={bouquet.src}
-              data-proposal-bouquet
-            >
+          {bouquets.map((bouquet) => (
+            <article className="proposal-bouquet" key={bouquet.src} data-proposal-bouquet>
               <div className="proposal-bouquet__media">
-                {bouquet.fallback ? (
-                  <picture>
-                    <source srcSet={bouquet.src} type="image/heic" />
-                    <img src={bouquet.fallback} alt={bouquet.title} />
-                  </picture>
-                ) : (
-                  <img src={bouquet.src} alt={bouquet.title} />
-                )}
-                <span>0{index + 1}</span>
+                <img src={bouquet.src} alt={bouquet.title} />
               </div>
               <div className="proposal-bouquet__copy">
                 <div>
@@ -142,30 +132,6 @@ export default function ProposalExperience() {
               </div>
             </article>
           ))}
-        </div>
-      </section>
-
-      <section className="proposal-pack" data-proposal-pack>
-        <div className="proposal-pack__heading" data-reveal>
-          <p className="proposal-kicker">Une expérience clé en main</p>
-          <h2>Pack demande en mariage complet</h2>
-          <p>Tout est pensé pour vous laisser vivre pleinement l'instant.</p>
-        </div>
-
-        <div className="proposal-pack__items">
-          {packItems.map((item) => (
-            <article key={item.number} data-proposal-pack-item>
-              <span>{item.number}</span>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-              <strong>{item.price}</strong>
-            </article>
-          ))}
-        </div>
-
-        <div className="proposal-pack__total">
-          <span>Tarif du pack complet</span>
-          <strong>540 €</strong>
         </div>
       </section>
 

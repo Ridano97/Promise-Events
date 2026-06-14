@@ -26,7 +26,7 @@
 
 .site-header--chic {
   border-color: rgba(40, 39, 37, 0.16);
-  background: rgba(223, 218, 209, 0.9);
+  background: #dddad2;
 }
 
 .site-header--chic .brand-mark--desktop {
@@ -35,7 +35,8 @@
 
 .site-header--chic .brand-mark img {
   height: 54px;
-  mix-blend-mode: multiply;
+  mix-blend-mode: normal;
+  background: transparent;
 }
 
 .site-header--chic .main-nav a.is-active {
@@ -112,6 +113,10 @@
     grid-template-columns: minmax(0, 1fr) 176px minmax(0, 1fr);
     width: min(calc(100% - 80px), 1120px);
     font-size: 0.8rem;
+  }
+
+  .site-header--chic .main-nav {
+    background: #dddad2;
   }
 
   .main-nav__group {
@@ -217,6 +222,7 @@
 
   .site-header--chic .brand-mark img {
     height: 52px;
+    mix-blend-mode: normal;
   }
 
   .nav-toggle {

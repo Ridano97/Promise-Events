@@ -1,7 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import {
+  ArrowUpRight,
+  Flower2,
+  Gem,
+  Heart,
+  MapPin,
+  MessageCircle,
+  ShoppingBag,
+  Sparkles,
+} from "lucide-react";
 import { Autoplay, FreeMode } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -12,13 +21,6 @@ const bouquets = [
     detail: "avec gypsophile",
     price: "90 €",
     note: "Romantique",
-  },
-  {
-    image: "/images/bouquet4.png",
-    name: "Équateur",
-    detail: "roses ivoire",
-    price: "120 €",
-    note: "Intemporel",
   },
   {
     image: "/images/bouquet1.png",
@@ -62,6 +64,37 @@ const otherBouquets = [
   { image: "/images/bouquet28.jpg", name: "Cœur rubis", detail: "Composition rouge sur mesure", price: "Sur devis", note: "Précieux" },
 ];
 
+const creations = [
+  { image: "/images/bouquet1.png", title: "Bouquet de mariée", icon: Heart, href: "#collection" },
+  { image: "/images/bouquetrouge1.jpg", title: "Demande en mariage", icon: Sparkles, href: "/demande-en-mariage" },
+  { image: "/images/fete.png", title: "Centres de table", icon: Flower2, href: "#autres-creations" },
+  { image: "/images/bouquet22.jpg", title: "Compositions florales", icon: ShoppingBag, href: "#autres-creations" },
+  { image: "/images/mariage4.png", title: "Décoration complète", icon: Gem, href: "/contact" },
+];
+
+const benefits = [
+  {
+    icon: Flower2,
+    title: "Fleurs fraîches et de saison",
+    text: "Sélectionnées avec soin pour leur beauté et leur tenue.",
+  },
+  {
+    icon: Heart,
+    title: "Créations sur mesure",
+    text: "Chaque détail est pensé selon vos envies.",
+  },
+  {
+    icon: MapPin,
+    title: "Basé à Genève",
+    text: "Livraison possible dans un rayon de 50 km.",
+  },
+  {
+    icon: Gem,
+    title: "Élégance et raffinement",
+    text: "Des compositions uniques pour sublimer vos moments.",
+  },
+];
+
 const reveal = {
   initial: { opacity: 0, y: 70, clipPath: "inset(12% 0 0 0)" },
   whileInView: { opacity: 1, y: 0, clipPath: "inset(0% 0 0 0)" },
@@ -79,13 +112,25 @@ export default function ChicBloomsExperience() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p>Collection florale · Genève</p>
-          <img src="/images/logochicblooms.png" alt="Chic Blooms" />
-          <h1>Le bouquet devient une pièce de caractère.</h1>
-          <a className="chic-scroll-cue" href="#collection">
-            Découvrir la collection
-            <ArrowDown size={16} />
-          </a>
+          <h1>Pour vos mariages, demandes en mariage et événements d’exception.</h1>
+          <span className="chic-hero__line" />
+          <p className="chic-hero__description">
+            Chaque bouquet raconte une histoire. Des compositions uniques, pensées avec amour et
+            réalisées avec les plus belles fleurs de saison.
+          </p>
+          <div className="chic-hero__actions">
+            <a
+              className="chic-hero__whatsapp"
+              href="https://wa.me/33773433824"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Commander via WhatsApp <MessageCircle size={15} />
+            </a>
+            <a className="chic-scroll-cue" href="#creations">
+              Découvrir nos créations <ArrowUpRight size={15} />
+            </a>
+          </div>
         </motion.div>
 
         <motion.figure
@@ -94,31 +139,33 @@ export default function ChicBloomsExperience() {
           animate={{ opacity: 1, y: 0, clipPath: "inset(0% 0 0 0)" }}
           transition={{ duration: 1.35, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
         >
-          <img src="/images/bouquet6.JPG" alt="Bouquet de callas perlé" />
-          <figcaption>01 · Callas perlé</figcaption>
+          <img src="/images/bouquet6.JPG" alt="Robe avec bouquet perlé Chic Blooms" />
         </motion.figure>
-        <span className="chic-hero__edition">Édition 2026</span>
       </section>
 
-      <div className="chic-marquee" aria-hidden="true">
-        <div>
-          <span>Say it with flowers</span><i>✦</i><span>Chic Blooms</span><i>✦</i>
-          <span>Créations signature</span><i>✦</i><span>Say it with flowers</span><i>✦</i>
-          <span>Chic Blooms</span><i>✦</i><span>Créations signature</span><i>✦</i>
+      <section className="chic-creations" id="creations">
+        <motion.header {...reveal} className="chic-creations__heading">
+          <span aria-hidden="true">✦</span>
+          <h2>Nos créations florales</h2>
+          <p>Des compositions sur mesure pour chaque moment précieux.</p>
+        </motion.header>
+        <div className="chic-creations__grid">
+          {creations.map(({ image, title, icon: Icon, href }, index) => (
+            <motion.a
+              href={href}
+              className="chic-creation-card"
+              key={title}
+              initial={{ opacity: 0, y: 36 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.8, delay: index * 0.07, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div><img src={image} alt="" /></div>
+              <span><Icon size={18} /></span>
+              <h3>{title}</h3>
+            </motion.a>
+          ))}
         </div>
-      </div>
-
-      <section className="chic-intro">
-        <motion.p {...reveal} className="chic-label">Notre vision</motion.p>
-        <motion.h2 {...reveal}>
-          Des fleurs choisies comme des mots.<br />
-          <em>Une composition pensée comme une allure.</em>
-        </motion.h2>
-        <motion.p {...reveal} className="chic-intro__copy">
-          Chic Blooms imagine des bouquets de mariée sur mesure, avec une attention portée aux
-          volumes, aux textures et aux finitions. Chaque création accompagne votre silhouette et
-          raconte votre histoire sans jamais la surcharger.
-        </motion.p>
       </section>
 
       <section className="chic-welcome">
@@ -128,7 +175,6 @@ export default function ChicBloomsExperience() {
         </motion.div>
 
         <motion.div {...reveal} className="chic-welcome__copy">
-          <span>01</span>
           <p>
             Du bouquet délicat aux créations plus majestueuses, nous réalisons des compositions
             confectionnées sur mesure avec une attention particulière portée à chaque détail.
@@ -140,7 +186,6 @@ export default function ChicBloomsExperience() {
         </motion.div>
 
         <motion.aside {...reveal} className="chic-order">
-          <span>02</span>
           <h3>Comment commander&nbsp;?</h3>
           <p>
             Les prises de commande s’effectuent uniquement via WhatsApp. Merci de répondre au
@@ -151,6 +196,15 @@ export default function ChicBloomsExperience() {
             retrait. À partir de 30 roses, la livraison est disponible dans un rayon de 50 km
             autour de Genève, selon le lieu de prestation. Des frais de déplacement peuvent
             s’appliquer.
+          </p>
+          <p>
+            Les commandes doivent être effectuées minimum 48 heures à l’avance afin de garantir
+            la disponibilité des fleurs et la meilleure qualité de réalisation.
+          </p>
+          <p>
+            Afin de valider votre commande, un acompte de 30 % sera demandé. Aucune commande ne
+            sera confirmée sans le versement de cet acompte. Une fois l’acompte reçu, nous
+            convenons ensemble de l’heure du retrait ou de la livraison.
           </p>
           <a
             className="chic-text-link"
@@ -189,13 +243,12 @@ export default function ChicBloomsExperience() {
             1800: { slidesPerView: 4.4, spaceBetween: 28 },
           }}
         >
-          {bouquets.map((bouquet, index) => (
-            <SwiperSlide key={`${bouquet.name}-${index}`}>
+          {bouquets.map((bouquet) => (
+            <SwiperSlide key={bouquet.name}>
               <article className="chic-product">
                 <div className="chic-product__media">
                   <img src={bouquet.image} alt={`Bouquet ${bouquet.name}`} />
                   <span>{bouquet.note}</span>
-                  <b>0{index + 1}</b>
                 </div>
                 <div className="chic-product__info">
                   <div>
@@ -210,15 +263,18 @@ export default function ChicBloomsExperience() {
         </Swiper>
       </section>
 
-      <section className="chic-collection chic-collection--other">
+      <section className="chic-collection chic-collection--other" id="autres-creations">
         <header className="chic-collection__heading">
           <motion.div {...reveal}>
             <p className="chic-label">Créations pour chaque occasion</p>
             <h2>Nos autres réalisations de bouquet</h2>
           </motion.div>
-          <motion.p {...reveal}>
-            Des compositions fraîches et singulières, imaginées sur mesure.
-          </motion.p>
+          <motion.div {...reveal} className="chic-heading-action">
+            <p>Des compositions fraîches et singulières, imaginées sur mesure.</p>
+            <a href="https://wa.me/33773433824" target="_blank" rel="noreferrer">
+              WhatsApp <ArrowUpRight size={16} />
+            </a>
+          </motion.div>
         </header>
         <Swiper
           className="chic-rail"
@@ -249,7 +305,6 @@ export default function ChicBloomsExperience() {
                 <div className="chic-product__media">
                   <img src={bouquet.image} alt={bouquet.name} />
                   <span>{bouquet.note}</span>
-                  <b>{String(index + 1).padStart(2, "0")}</b>
                 </div>
                 <div className="chic-product__info">
                   <div>
@@ -264,24 +319,18 @@ export default function ChicBloomsExperience() {
         </Swiper>
       </section>
 
+      <section className="chic-benefits">
+        {benefits.map(({ icon: Icon, title, text }) => (
+          <motion.article {...reveal} key={title}>
+            <Icon size={25} />
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </motion.article>
+        ))}
+      </section>
+
       <section className="chic-cta">
-        <motion.img {...reveal} src="/images/chic-blooms-logo.jpeg" alt="Chic Blooms, say it with flowers" />
-        <motion.div {...reveal}>
-          <p className="chic-label">Sur rendez-vous</p>
-          <h2>Votre bouquet,<br /><em>votre signature.</em></h2>
-          <p>Parlez-nous de votre robe, de votre cérémonie et de la fleur qui vous ressemble.</p>
-          <div className="chic-cta__conditions">
-            <p className="chic-label">Conditions de commande</p>
-            <p>
-              Les commandes doivent être effectuées minimum 48 heures à l’avance afin de garantir
-              la disponibilité des fleurs et la meilleure qualité de réalisation.
-            </p>
-            <p>
-              Afin de valider votre commande, un acompte de 30 % sera demandé. Aucune commande ne
-              sera confirmée sans le versement de cet acompte. Une fois l’acompte reçu, nous
-              convenons ensemble de l’heure du retrait ou de la livraison.
-            </p>
-          </div>
+        <motion.div {...reveal} className="chic-cta__button-wrap">
           <a
             className="chic-button"
             href="https://wa.me/33773433824?text=Bonjour%20Chic%20Blooms%2C%20je%20souhaite%20cr%C3%A9er%20mon%20bouquet."

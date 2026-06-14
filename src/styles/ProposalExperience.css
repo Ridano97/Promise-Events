@@ -19,8 +19,8 @@
   display: grid;
   grid-template-columns: minmax(320px, 0.72fr) minmax(500px, 1fr);
   gap: clamp(72px, 9vw, 180px);
-  min-height: calc(100svh - 120px);
-  padding: clamp(72px, 8vw, 132px) 0 clamp(96px, 11vw, 180px);
+  min-height: auto;
+  padding: clamp(38px, 5vw, 76px) 0 clamp(54px, 6vw, 90px);
 }
 
 .proposal-hero__copy {
@@ -80,7 +80,7 @@
 
 .proposal-hero__media {
   position: relative;
-  min-height: 650px;
+  min-height: 540px;
   margin: 0;
   overflow: hidden;
   background: var(--sand);
@@ -345,17 +345,17 @@
 }
 
 .proposal-pack {
-  margin-block: clamp(120px, 13vw, 230px);
-  padding: clamp(40px, 5vw, 78px);
+  margin-block: clamp(64px, 7vw, 110px);
+  padding: clamp(26px, 3vw, 44px);
   border: 1px solid var(--ink);
 }
 
 .proposal-pack__heading {
   display: grid;
   grid-template-columns: 0.45fr 1fr 0.8fr;
-  gap: clamp(24px, 5vw, 80px);
+  gap: clamp(20px, 3vw, 46px);
   align-items: end;
-  padding-bottom: clamp(36px, 5vw, 70px);
+  padding-bottom: clamp(22px, 3vw, 36px);
   border-bottom: 1px solid var(--line);
 }
 
@@ -368,7 +368,7 @@
 .proposal-pack__items article {
   display: grid;
   align-content: start;
-  padding: clamp(28px, 4vw, 58px);
+  padding: clamp(22px, 2.6vw, 38px);
   border-right: 1px solid var(--line);
 }
 
@@ -382,7 +382,7 @@
 }
 
 .proposal-pack__items h3 {
-  margin: 32px 0 16px;
+  margin: 0 0 16px;
   font-size: clamp(1.1rem, 1.5vw, 1.5rem);
 }
 
@@ -393,26 +393,27 @@
 }
 
 .proposal-pack__items strong {
-  margin-top: 38px;
+  margin-top: 22px;
   font-family: var(--serif);
   font-size: 2rem;
   font-weight: 400;
 }
 
-.proposal-pack__total {
+.proposal-pack__price {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding: 24px 28px;
+  padding: 18px 22px;
   background: var(--stone);
   font-family: var(--mono);
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
-.proposal-pack__total strong {
+.proposal-pack__price strong {
   font-family: var(--serif);
-  font-size: 1.4rem;
+  font-size: clamp(1.7rem, 2.6vw, 2.8rem);
   font-weight: 400;
 }
 
@@ -428,7 +429,7 @@
     grid-template-columns: minmax(300px, 0.76fr) minmax(440px, 1fr);
     gap: 80px;
     min-height: auto;
-    padding: 90px 0 130px;
+    padding: 56px 0 76px;
   }
 
   .proposal-hero__copy {
@@ -444,7 +445,7 @@
   }
 
   .proposal-hero__media {
-    min-height: 560px;
+    min-height: 500px;
   }
 
   .proposal-scenes,
@@ -510,24 +511,24 @@
   }
 
   .proposal-pack {
-    margin-block: 140px;
-    padding: 52px;
+    margin-block: 82px;
+    padding: 34px;
   }
 
   .proposal-pack__heading {
-    gap: 52px;
-    padding-bottom: 52px;
+    gap: 30px;
+    padding-bottom: 30px;
   }
 
   .proposal-pack__items article {
     display: flex;
     flex-direction: column;
-    padding: 42px;
+    padding: 28px;
   }
 
   .proposal-pack__items h3 {
     min-height: 52px;
-    margin: 28px 0 14px;
+    margin: 0 0 14px;
   }
 
   .proposal-pack__items p {
@@ -536,7 +537,7 @@
 
   .proposal-pack__items strong {
     margin-top: auto;
-    padding-top: 36px;
+    padding-top: 22px;
   }
 }
 
@@ -545,7 +546,7 @@
     grid-template-columns: 1fr;
     gap: 54px;
     min-height: auto;
-    padding-block: 70px 120px;
+    padding-block: 40px 70px;
   }
 
   .proposal-hero__copy {
@@ -553,7 +554,7 @@
   }
 
   .proposal-hero__media {
-    min-height: 620px;
+    min-height: 520px;
   }
 
   .proposal-film__media {
@@ -613,7 +614,7 @@
 
   .proposal-hero {
     gap: 30px;
-    padding: 46px 0 90px;
+    padding: 22px 0 44px;
   }
 
   .proposal-hero h1 {
@@ -627,7 +628,7 @@
   }
 
   .proposal-hero__media {
-    min-height: 500px;
+    min-height: 450px;
   }
 
   .proposal-film__media {
@@ -669,14 +670,24 @@
   }
 
   .proposal-pack {
+    margin-block: 44px;
     padding: 28px 18px;
+  }
+
+  .proposal-scenes,
+  .proposal-bouquets {
+    padding-block: 64px;
+  }
+
+  .proposal-film {
+    padding-block: 28px 64px;
   }
 
   .proposal-pack__items article {
     padding-inline: 0;
   }
 
-  .proposal-pack__total {
+  .proposal-pack__price {
     display: grid;
   }
 }

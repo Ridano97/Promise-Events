@@ -1,5 +1,3 @@
-import { TransitionLink } from "./RouteTransition";
-
 export default function Hero() {
   return (
     <section className="hero" id="accueil">
@@ -14,14 +12,7 @@ export default function Hero() {
 
       <div className="hero-copy">
         <h1 className="hero-title">Promise Events</h1>
-        <p className="hero-services">Décoration | Bouquets | Scénographie | Location</p>
-        <p className="hero-signature">
-          <span>L'art de sublimer vos</span>
-          <span>Plus belle promesse</span>
-        </p>
-        <TransitionLink className="hero-button" href="/#mariage">
-          Découvrez nos services
-        </TransitionLink>
+        <p className="hero-services">Décoration | Bouquet | Scénographie | Location</p>
       </div>
     </section>
   );

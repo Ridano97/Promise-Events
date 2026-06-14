@@ -6,7 +6,7 @@ import { TransitionLink } from "./RouteTransition";
 
 const navItems = [
   ["Accueil", "/"],
-  ["Univers Promise Events", "/#univers"],
+  ["Univers Promise Events", "/univers-promise-events"],
   ["Chic Blooms x\nPromise Events", "/chic-blooms"],
   ["Demande en mariage", "/demande-en-mariage"],
   ["Contact", "/contact"],

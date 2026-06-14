@@ -6,19 +6,16 @@ import { useRef } from "react";
 const scenes = [
   {
     image: "/images/accueil2.jpg",
-    label: "01",
     title: "Le décor s'installe",
     text: "Une arche florale, des bougies et la lumière du lac deviennent le premier souvenir.",
   },
   {
     image: "/images/mariage2.png",
-    label: "02",
     title: "Le moment bascule",
     text: "La scène guide le regard et laisse toute la place à l'émotion.",
   },
   {
     image: "/images/bouquet6.JPG",
-    label: "03",
     title: "Le détail signe l'ensemble",
     text: "Perles, textures et fleurs fraîches composent une finition précieuse.",
   },
@@ -64,7 +61,6 @@ export default function ScrollExperience() {
               >
                 <img src={scene.image} alt={scene.title} />
                 <div>
-                  <span>{scene.label}</span>
                   <h3>{scene.title}</h3>
                   <p>{scene.text}</p>
                 </div>
