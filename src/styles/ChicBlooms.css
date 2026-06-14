@@ -34,7 +34,7 @@
 .chic-hero {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(420px, 1.08fr);
+  grid-template-columns: 1fr;
   gap: 0;
   align-items: center;
   width: min(100% - 48px, 1380px);
@@ -59,6 +59,8 @@
   position: relative;
   z-index: 2;
   align-self: center;
+  width: min(100%, 760px);
+  margin-inline: auto;
   padding: clamp(34px, 5vw, 82px);
 }
 
@@ -494,12 +496,12 @@
 }
 
 .chic-collection {
-  padding: clamp(74px, 8vw, 130px) 0 clamp(120px, 13vw, 220px);
+  padding: clamp(74px, 8vw, 130px) 0 clamp(54px, 6vw, 90px);
   border-top: 1px solid var(--chic-line);
 }
 
 .chic-collection--other {
-  padding-top: clamp(84px, 8vw, 126px);
+  padding-top: clamp(54px, 6vw, 90px);
   background: var(--chic-paper);
 }
 
@@ -1243,10 +1245,10 @@
 @media (min-width: 1101px) {
   .chic-hero,
   .chic-page .chic-hero {
-    grid-template-columns: minmax(0, 0.92fr) minmax(420px, 1.08fr);
-    width: min(calc(100% - 80px), 1380px);
+    grid-template-columns: 1fr;
+    width: min(calc(100% - 80px), 960px);
     gap: 0;
-    padding-block: 0;
+    padding-block: 48px;
   }
 
   .chic-hero__brand img {

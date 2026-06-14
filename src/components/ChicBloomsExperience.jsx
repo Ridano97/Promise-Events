@@ -8,8 +8,6 @@ import {
   Heart,
   MapPin,
   MessageCircle,
-  ShoppingBag,
-  Sparkles,
 } from "lucide-react";
 import { Autoplay, FreeMode } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -62,14 +60,6 @@ const otherBouquets = [
   { image: "/images/bouquet26.jpg", name: "Rouge absolu", detail: "Roses rouges de caractère", price: "Sur devis", note: "Intense" },
   { image: "/images/bouquet27.jpg", name: "Roseraie poudrée", detail: "Bouquet tendre et généreux", price: "Sur devis", note: "Élégant" },
   { image: "/images/bouquet28.jpg", name: "Cœur rubis", detail: "Composition rouge sur mesure", price: "Sur devis", note: "Précieux" },
-];
-
-const creations = [
-  { image: "/images/bouquet1.png", title: "Bouquet de mariée", icon: Heart, href: "#collection" },
-  { image: "/images/bouquetrouge1.jpg", title: "Demande en mariage", icon: Sparkles, href: "/demande-en-mariage" },
-  { image: "/images/fete.png", title: "Centres de table", icon: Flower2, href: "#autres-creations" },
-  { image: "/images/bouquet22.jpg", title: "Compositions florales", icon: ShoppingBag, href: "#autres-creations" },
-  { image: "/images/mariage4.png", title: "Décoration complète", icon: Gem, href: "/contact" },
 ];
 
 const benefits = [
@@ -127,45 +117,115 @@ export default function ChicBloomsExperience() {
             >
               Commander via WhatsApp <MessageCircle size={15} />
             </a>
-            <a className="chic-scroll-cue" href="#creations">
+            <a className="chic-scroll-cue" href="#collection">
               Découvrir nos créations <ArrowUpRight size={15} />
             </a>
           </div>
         </motion.div>
 
-        <motion.figure
-          className="chic-hero__visual chic-hero__visual--main"
-          initial={{ opacity: 0, y: 70, clipPath: "inset(18% 0 0 0)" }}
-          animate={{ opacity: 1, y: 0, clipPath: "inset(0% 0 0 0)" }}
-          transition={{ duration: 1.35, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <img src="/images/bouquet6.JPG" alt="Robe avec bouquet perlé Chic Blooms" />
-        </motion.figure>
       </section>
 
-      <section className="chic-creations" id="creations">
-        <motion.header {...reveal} className="chic-creations__heading">
-          <span aria-hidden="true">✦</span>
-          <h2>Nos créations florales</h2>
-          <p>Des compositions sur mesure pour chaque moment précieux.</p>
-        </motion.header>
-        <div className="chic-creations__grid">
-          {creations.map(({ image, title, icon: Icon, href }, index) => (
-            <motion.a
-              href={href}
-              className="chic-creation-card"
-              key={title}
-              initial={{ opacity: 0, y: 36 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.25 }}
-              transition={{ duration: 0.8, delay: index * 0.07, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <div><img src={image} alt="" /></div>
-              <span><Icon size={18} /></span>
-              <h3>{title}</h3>
-            </motion.a>
+      <section className="chic-collection" id="collection">
+        <header className="chic-collection__heading">
+          <motion.div {...reveal}>
+            <p className="chic-label">Catalogue bouquet de mariée</p>
+            <h2>La collection</h2>
+          </motion.div>
+          <motion.p {...reveal}>Faites glisser pour explorer les créations.</motion.p>
+        </header>
+
+        <Swiper
+          className="chic-rail"
+          modules={[Autoplay, FreeMode]}
+          freeMode={{ enabled: true, momentumRatio: 0.8 }}
+          grabCursor
+          rewind
+          speed={1100}
+          autoplay={{ delay: 2800, disableOnInteraction: false, pauseOnMouseEnter: true }}
+          spaceBetween={18}
+          slidesPerView={1.12}
+          breakpoints={{
+            620: { slidesPerView: 2.1, spaceBetween: 22 },
+            980: { slidesPerView: 3.15, spaceBetween: 26 },
+            1440: { slidesPerView: 4, spaceBetween: 26 },
+            1800: { slidesPerView: 4.4, spaceBetween: 28 },
+          }}
+        >
+          {bouquets.map((bouquet) => (
+            <SwiperSlide key={bouquet.name}>
+              <article className="chic-product" key={bouquet.image}>
+                <div className="chic-product__media">
+                  <img src={bouquet.image} alt={`Bouquet ${bouquet.name}`} />
+                  <span>{bouquet.note}</span>
+                </div>
+                <div className="chic-product__info">
+                  <div>
+                    <h3>{bouquet.name}</h3>
+                    <p>{bouquet.detail}</p>
+                  </div>
+                  <strong>{bouquet.price}</strong>
+                </div>
+              </article>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
+      </section>
+
+      <section className="chic-collection chic-collection--other" id="autres-creations">
+        <header className="chic-collection__heading">
+          <motion.div {...reveal}>
+            <p className="chic-label">Créations pour chaque occasion</p>
+            <h2>Nos autres réalisations de bouquet</h2>
+          </motion.div>
+          <motion.div {...reveal} className="chic-heading-action">
+            <p>Des compositions fraîches et singulières, imaginées sur mesure.</p>
+            <a href="https://wa.me/33773433824" target="_blank" rel="noreferrer">
+              WhatsApp <ArrowUpRight size={16} />
+            </a>
+          </motion.div>
+        </header>
+        <Swiper
+          className="chic-rail"
+          modules={[Autoplay, FreeMode]}
+          freeMode={{ enabled: true, momentumRatio: 0.8 }}
+          grabCursor
+          rewind
+          speed={1100}
+          autoplay={{ delay: 3200, disableOnInteraction: false, pauseOnMouseEnter: true }}
+          spaceBetween={18}
+          slidesPerView={1.12}
+          breakpoints={{
+            620: { slidesPerView: 2.1, spaceBetween: 22 },
+            980: { slidesPerView: 3.15, spaceBetween: 26 },
+            1440: { slidesPerView: 4, spaceBetween: 26 },
+            1800: { slidesPerView: 4.4, spaceBetween: 28 },
+          }}
+        >
+          {otherBouquets.map((bouquet, index) => (
+            <SwiperSlide key={bouquet.image}>
+              <motion.article
+                key={bouquet.image}
+                className="chic-product"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.18 }}
+                transition={{ duration: 0.72, delay: Math.min(index * 0.04, 0.2) }}
+              >
+                <div className="chic-product__media">
+                  <img src={bouquet.image} alt={bouquet.name} />
+                  <span>{bouquet.note}</span>
+                </div>
+                <div className="chic-product__info">
+                  <div>
+                    <h3>{bouquet.name}</h3>
+                    <p>{bouquet.detail}</p>
+                  </div>
+                  <strong>{bouquet.price}</strong>
+                </div>
+              </motion.article>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </section>
 
       <section className="chic-welcome">
@@ -215,108 +275,6 @@ export default function ChicBloomsExperience() {
             Commander via WhatsApp <ArrowUpRight size={17} />
           </a>
         </motion.aside>
-      </section>
-
-      <section className="chic-collection" id="collection">
-        <header className="chic-collection__heading">
-          <motion.div {...reveal}>
-            <p className="chic-label">Catalogue bouquet de mariée</p>
-            <h2>La collection</h2>
-          </motion.div>
-          <motion.p {...reveal}>Faites glisser pour explorer les créations.</motion.p>
-        </header>
-
-        <Swiper
-          className="chic-rail"
-          modules={[Autoplay, FreeMode]}
-          freeMode={{ enabled: true, momentumRatio: 0.8 }}
-          grabCursor
-          loop
-          speed={1100}
-          autoplay={{ delay: 2800, disableOnInteraction: false, pauseOnMouseEnter: true }}
-          spaceBetween={18}
-          slidesPerView={1.12}
-          breakpoints={{
-            620: { slidesPerView: 2.1, spaceBetween: 22 },
-            980: { slidesPerView: 3.15, spaceBetween: 26 },
-            1440: { slidesPerView: 4, spaceBetween: 26 },
-            1800: { slidesPerView: 4.4, spaceBetween: 28 },
-          }}
-        >
-          {bouquets.map((bouquet) => (
-            <SwiperSlide key={bouquet.name}>
-              <article className="chic-product">
-                <div className="chic-product__media">
-                  <img src={bouquet.image} alt={`Bouquet ${bouquet.name}`} />
-                  <span>{bouquet.note}</span>
-                </div>
-                <div className="chic-product__info">
-                  <div>
-                    <h3>{bouquet.name}</h3>
-                    <p>{bouquet.detail}</p>
-                  </div>
-                  <strong>{bouquet.price}</strong>
-                </div>
-              </article>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </section>
-
-      <section className="chic-collection chic-collection--other" id="autres-creations">
-        <header className="chic-collection__heading">
-          <motion.div {...reveal}>
-            <p className="chic-label">Créations pour chaque occasion</p>
-            <h2>Nos autres réalisations de bouquet</h2>
-          </motion.div>
-          <motion.div {...reveal} className="chic-heading-action">
-            <p>Des compositions fraîches et singulières, imaginées sur mesure.</p>
-            <a href="https://wa.me/33773433824" target="_blank" rel="noreferrer">
-              WhatsApp <ArrowUpRight size={16} />
-            </a>
-          </motion.div>
-        </header>
-        <Swiper
-          className="chic-rail"
-          modules={[Autoplay, FreeMode]}
-          freeMode={{ enabled: true, momentumRatio: 0.8 }}
-          grabCursor
-          loop
-          speed={1100}
-          autoplay={{ delay: 3200, disableOnInteraction: false, pauseOnMouseEnter: true }}
-          spaceBetween={18}
-          slidesPerView={1.12}
-          breakpoints={{
-            620: { slidesPerView: 2.1, spaceBetween: 22 },
-            980: { slidesPerView: 3.15, spaceBetween: 26 },
-            1440: { slidesPerView: 4, spaceBetween: 26 },
-            1800: { slidesPerView: 4.4, spaceBetween: 28 },
-          }}
-        >
-          {otherBouquets.map((bouquet, index) => (
-            <SwiperSlide key={bouquet.image}>
-              <motion.article
-                className="chic-product"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.18 }}
-                transition={{ duration: 0.72, delay: Math.min(index * 0.04, 0.2) }}
-              >
-                <div className="chic-product__media">
-                  <img src={bouquet.image} alt={bouquet.name} />
-                  <span>{bouquet.note}</span>
-                </div>
-                <div className="chic-product__info">
-                  <div>
-                    <h3>{bouquet.name}</h3>
-                    <p>{bouquet.detail}</p>
-                  </div>
-                  <strong>{bouquet.price}</strong>
-                </div>
-              </motion.article>
-            </SwiperSlide>
-          ))}
-        </Swiper>
       </section>
 
       <section className="chic-benefits">
