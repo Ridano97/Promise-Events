@@ -90,7 +90,7 @@ function TextCard({ item, index }) {
       className="universe-card universe-card--text"
       initial={{ opacity: 0, y: 34, filter: "blur(10px)" }}
       animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      transition={{ duration: 0.95, delay: 0.22 + index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 1.35, delay: 0.28 + index * 0.14, ease: [0.16, 1, 0.3, 1] }}
     >
       {item.paragraphs.map((paragraph) => (
         <p key={paragraph}>{paragraph}</p>
@@ -115,7 +115,7 @@ function ImageCard({ item, index }) {
         rotate: index % 2 === 0 ? -0.28 : 0.28,
         clipPath: "inset(0% 0 0% 0)",
       }}
-      transition={{ duration: 1.05, delay: 0.12 + index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 1.45, delay: 0.18 + index * 0.14, ease: [0.16, 1, 0.3, 1] }}
     >
       <img src={item.src} alt={item.alt} style={{ objectPosition: item.position }} />
     </motion.figure>
@@ -128,7 +128,7 @@ function CarouselPair({ image, text, index }) {
       className="universe-pair"
       initial={{ opacity: 0, y: 46 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, delay: 0.08 + index * 0.12, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 1.4, delay: 0.12 + index * 0.16, ease: [0.16, 1, 0.3, 1] }}
     >
       <ImageCard item={image} index={index} />
       <TextCard item={text} index={index} />
@@ -157,7 +157,7 @@ export default function PromiseIntro() {
 
     const timer = window.setInterval(() => {
       setActivePage(([current]) => [(current + 1) % pages.length, 1]);
-    }, 5600);
+    }, 8000);
 
     return () => window.clearInterval(timer);
   }, [isPaused]);
@@ -208,7 +208,7 @@ export default function PromiseIntro() {
                 if (info.offset.x < -80) navigate(1);
                 if (info.offset.x > 80) navigate(-1);
               }}
-              transition={{ duration: 0.72, ease: [0.19, 1, 0.22, 1] }}
+              transition={{ duration: 1.15, ease: [0.19, 1, 0.22, 1] }}
             >
               <CarouselPair image={pages[activePage][0]} index={0} text={pages[activePage][1]} />
               <CarouselPair image={pages[activePage][2]} index={1} text={pages[activePage][3]} />

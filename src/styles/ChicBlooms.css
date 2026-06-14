@@ -1052,6 +1052,14 @@
     padding-block: 100px;
   }
 
+  .chic-cta > div {
+    order: 1;
+  }
+
+  .chic-cta > img {
+    order: 2;
+  }
+
   .chic-cta h2 {
     font-size: clamp(2.65rem, 12vw, 4.2rem);
   }
