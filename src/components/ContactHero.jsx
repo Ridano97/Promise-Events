@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import CloudflareStream from "./CloudflareStream";
 
 export default function ContactHero() {
   return (
@@ -20,11 +21,9 @@ export default function ContactHero() {
         animate={{ opacity: 1, clipPath: "inset(0% 0 0% 0)" }}
         transition={{ duration: 1.25, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
       >
-        <iframe
-          src="https://customer-8z1yg93quaaa9ooh.cloudflarestream.com/ba550a7066482fc9f62089ab18bc1ee9/iframe?autoplay=true&muted=true&loop=true&controls=false&preload=true"
+        <CloudflareStream
+          videoId="ba550a7066482fc9f62089ab18bc1ee9"
           title="L'univers Promise Events"
-          allow="accelerometer; autoplay; encrypted-media; picture-in-picture"
-          allowFullScreen
         />
         <div className="contact-hero__veil" />
         <p>Votre histoire commence ici</p>

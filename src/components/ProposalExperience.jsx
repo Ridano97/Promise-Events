@@ -1,3 +1,5 @@
+import CloudflareStream from "./CloudflareStream";
+
 const scenes = [
   { src: "/images/mariage2.png", alt: "Demande en mariage devant une arche de roses rouges" },
   { src: "/images/mariage1.png", alt: "Couple devant une arche de roses rouges au bord du lac" },
@@ -55,11 +57,9 @@ export default function ProposalExperience() {
         </div>
 
         <figure className="proposal-hero__media" data-proposal-hero-media>
-          <iframe
-            src="https://customer-8z1yg93quaaa9ooh.cloudflarestream.com/1b3aae398aba4398e5b8f8d629ec7fb3/iframe?autoplay=true&muted=true&loop=true&controls=false&preload=true"
+          <CloudflareStream
+            videoId="1b3aae398aba4398e5b8f8d629ec7fb3"
             title="Une demande en mariage signée Promise Events"
-            allow="accelerometer; autoplay; encrypted-media; picture-in-picture"
-            allowFullScreen
           />
           <figcaption>
             <p>Une demande imaginée comme une scène de cinéma</p>
@@ -137,12 +137,10 @@ export default function ProposalExperience() {
 
       <section className="proposal-film" data-proposal-film>
         <div className="proposal-film__media">
-          <iframe
-            src="https://customer-8z1yg93quaaa9ooh.cloudflarestream.com/fb31c83bab4d0bacfb6e38ce3ac3b5eb/iframe?autoplay=true&muted=true&loop=true&controls=false&preload=true"
+          <CloudflareStream
+            videoId="fb31c83bab4d0bacfb6e38ce3ac3b5eb"
             title="Les détails d'une mise en scène Promise Events"
             loading="lazy"
-            allow="accelerometer; autoplay; encrypted-media; picture-in-picture"
-            allowFullScreen
           />
           <div className="proposal-film__veil" />
           <div className="proposal-film__copy">

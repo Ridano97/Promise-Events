@@ -1,12 +1,12 @@
+import CloudflareStream from "./CloudflareStream";
+
 export default function Hero() {
   return (
     <section className="hero" id="accueil">
       <div className="hero-video" aria-hidden="true">
-        <iframe
-          src="https://customer-8z1yg93quaaa9ooh.cloudflarestream.com/c2fe61b6266dbd15cd4b96e70b7f1a9f/iframe?autoplay=true&muted=true&loop=true&controls=false&preload=true"
+        <CloudflareStream
+          videoId="c2fe61b6266dbd15cd4b96e70b7f1a9f"
           title=""
-          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-          allowFullScreen
         />
       </div>
 
