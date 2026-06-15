@@ -9,6 +9,7 @@ const navItems = [
   ["Univers Promise Events", "/univers-promise-events"],
   ["Chic Blooms x\nPromise Events", "/chic-blooms"],
   ["Demande en mariage", "/demande-en-mariage"],
+  ["Catalogue de location", "/catalogue-de-location"],
   ["Contact", "/contact"],
 ];
 

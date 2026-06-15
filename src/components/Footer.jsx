@@ -36,6 +36,7 @@ const footerLinks = [
   ["Chic Blooms x Promise Events", "/chic-blooms"],
   ["Nos services", "/#mariage"],
   ["Demande en mariage", "/demande-en-mariage"],
+  ["Catalogue de location", "/catalogue-de-location"],
   ["Contact", "/contact"],
   ["Mentions légales", "/mentions-legales"],
   ["Conditions générales de vente", "/cgv"],

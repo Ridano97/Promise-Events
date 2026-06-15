@@ -83,7 +83,7 @@
 
 .main-nav__group--right {
   grid-column: 3;
-  grid-template-columns: max-content max-content;
+  grid-template-columns: repeat(3, max-content);
   justify-content: start;
 }
 
