@@ -7,18 +7,11 @@ const CUSTOMER_CODE = "customer-8z1yg93quaaa9ooh";
 
 export default function HeroVideo({ videoId }) {
   const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [useIframeFallback, setUseIframeFallback] = useState(false);
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-
-    const hlsSupported = video.canPlayType("application/vnd.apple.mpegurl");
-    if (!hlsSupported) {
-      setUseIframeFallback(true);
-      return;
-    }
 
     let active = true;
 
@@ -36,18 +29,20 @@ export default function HeroVideo({ videoId }) {
       });
     };
 
-    const markPlaying = () => setIsPlaying(true);
+    const markReady = () => {
+      setIsReady(true);
+      startVideo();
+    };
 
     video.load();
     startVideo();
 
     const retryAutoplay = window.setInterval(startVideo, 450);
     const stopRetry = window.setTimeout(() => window.clearInterval(retryAutoplay), 6500);
-
     video.addEventListener("loadedmetadata", startVideo);
-    video.addEventListener("loadeddata", startVideo);
-    video.addEventListener("canplay", startVideo);
-    video.addEventListener("playing", markPlaying);
+    video.addEventListener("loadeddata", markReady);
+    video.addEventListener("canplay", markReady);
+    video.addEventListener("playing", markReady);
     window.addEventListener("pageshow", startVideo);
     document.addEventListener("visibilitychange", startVideo);
     document.addEventListener("pointerdown", startVideo, { once: true });
@@ -58,9 +53,9 @@ export default function HeroVideo({ videoId }) {
       window.clearInterval(retryAutoplay);
       window.clearTimeout(stopRetry);
       video.removeEventListener("loadedmetadata", startVideo);
-      video.removeEventListener("loadeddata", startVideo);
-      video.removeEventListener("canplay", startVideo);
-      video.removeEventListener("playing", markPlaying);
+      video.removeEventListener("loadeddata", markReady);
+      video.removeEventListener("canplay", markReady);
+      video.removeEventListener("playing", markReady);
       window.removeEventListener("pageshow", startVideo);
       document.removeEventListener("visibilitychange", startVideo);
       document.removeEventListener("pointerdown", startVideo);
@@ -68,27 +63,39 @@ export default function HeroVideo({ videoId }) {
     };
   }, []);
 
-  if (useIframeFallback) {
-    return <CloudflareStream videoId={videoId} title="" />;
-  }
-
   return (
-    <video
-      ref={videoRef}
-      className={`hero-video__native${isPlaying ? " is-playing" : ""}`}
-      autoPlay
-      muted
-      defaultMuted
-      playsInline
-      loop
-      preload="auto"
-      poster="/images/url.jpg"
-      aria-hidden="true"
-    >
-      <source
-        src={`https://${CUSTOMER_CODE}.cloudflarestream.com/${videoId}/manifest/video.m3u8`}
-        type="application/vnd.apple.mpegurl"
-      />
-    </video>
+    <>
+      <CloudflareStream videoId={videoId} title="" className="hero-video__iframe" />
+      <video
+        ref={videoRef}
+        className={`hero-video__native${isReady ? " is-ready" : ""}`}
+        autoPlay
+        muted
+        defaultMuted
+        playsInline
+        loop
+        preload="auto"
+        aria-hidden="true"
+        controls={false}
+        disablePictureInPicture
+      >
+        <source
+          src={`https://${CUSTOMER_CODE}.cloudflarestream.com/${videoId}/downloads/default.mp4`}
+          type="video/mp4"
+        />
+        <source
+          src={`https://videodelivery.net/${videoId}/downloads/default.mp4`}
+          type="video/mp4"
+        />
+        <source
+          src={`https://${CUSTOMER_CODE}.cloudflarestream.com/${videoId}/manifest/video.m3u8`}
+          type="application/vnd.apple.mpegurl"
+        />
+        <source
+          src={`https://videodelivery.net/${videoId}/manifest/video.m3u8`}
+          type="application/vnd.apple.mpegurl"
+        />
+      </video>
+    </>
   );
 }
