@@ -1,28 +1,18 @@
 import ChicBloomsExperience from "../../components/ChicBloomsExperience";
+import { pageMetadata } from "../seo";
 
-export const metadata = {
-  title: "Chic Blooms x Promise Events - Catalogue floral",
-  description: "Bouquets de mariée et créations florales signature Chic Blooms.",
-  openGraph: {
-    title: "Chic Blooms x Promise Events - Catalogue floral",
-    description: "Bouquets de mariée et créations florales signature Chic Blooms.",
-    url: "https://www.promise-events.com/chic-blooms",
-    images: [
-      {
-        url: "/images/og-promise-logo.png",
-        width: 1200,
-        height: 630,
-        alt: "Logo Promise Events",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Chic Blooms x Promise Events - Catalogue floral",
-    description: "Bouquets de mariée et créations florales signature Chic Blooms.",
-    images: ["/images/og-promise-logo.png"],
-  },
-};
+export const metadata = pageMetadata({
+  title: "Chic Blooms - Bouquets de mariée",
+  description:
+    "Chic Blooms signe des bouquets de mariée, compositions florales et créations sur mesure avec roses, fleurs fraîches et finitions élégantes.",
+  path: "/chic-blooms",
+  keywords: [
+    "bouquet de mariée Genève",
+    "Chic Blooms",
+    "composition florale mariage",
+    "bouquet roses mariée",
+  ],
+});
 
 export default function ChicBloomsPage() {
   return (

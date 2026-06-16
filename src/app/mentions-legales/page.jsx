@@ -1,8 +1,11 @@
 import LegalPage from "../../components/LegalPage";
+import { pageMetadata } from "../seo";
 
-export const metadata = {
-  title: "Mentions légales - Promise Events",
-};
+export const metadata = pageMetadata({
+  title: "Mentions légales",
+  description: "Mentions légales du site Promise Events.",
+  path: "/mentions-legales",
+});
 
 export default function MentionsLegalesPage() {
   return (

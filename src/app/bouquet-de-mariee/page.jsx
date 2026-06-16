@@ -1,9 +1,19 @@
 import Gallery from "../../components/Gallery";
 import PageHero from "../../components/PageHero";
+import { pageMetadata } from "../seo";
 
-export const metadata = {
-  title: "Bouquet de mariée - Promise Events",
-};
+export const metadata = pageMetadata({
+  title: "Bouquet de mariée sur mesure",
+  description:
+    "Bouquets de mariée élégants et compositions florales sur mesure : roses, lys, callas, pivoines et fleurs de saison pour sublimer votre cérémonie.",
+  path: "/bouquet-de-mariee",
+  keywords: [
+    "bouquet de mariée",
+    "bouquet mariage Genève",
+    "composition florale mariée",
+    "fleurs mariage",
+  ],
+});
 
 export default function BouquetDeMarieePage() {
   return (

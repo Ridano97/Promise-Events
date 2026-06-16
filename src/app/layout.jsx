@@ -5,6 +5,7 @@ import { RouteTransitionProvider } from "../components/RouteTransition";
 import ScrollEffects from "../components/ScrollEffects";
 import LuxuryEffects from "../components/LuxuryEffects";
 import BackToTop from "../components/BackToTop";
+import { seoConfig } from "./seo";
 
 const nativeTransitionScript = `
 (() => {
@@ -78,22 +79,40 @@ const nativeTransitionScript = `
 `;
 
 export const metadata = {
-  metadataBase: new URL("https://www.promise-events.com"),
-  title: "Promise Events - Décoration événementielle",
+  metadataBase: new URL(seoConfig.siteUrl),
+  title: {
+    default: "Promise Events - Décoration événementielle à Genève",
+    template: "%s | Promise Events",
+  },
   description:
-    "Décoration événementielle, demandes en mariage et compositions florales haut de gamme.",
+    "Décoration événementielle, demandes en mariage, bouquets de mariée et location de matériel haut de gamme à Genève et alentours.",
+  applicationName: "Promise Events",
+  creator: "Promise Events",
+  publisher: "Promise Events",
+  category: "Décoration événementielle",
+  keywords: [
+    "décoration événementielle Genève",
+    "demande en mariage Genève",
+    "bouquet de mariée Genève",
+    "location décoration mariage",
+    "Promise Events",
+    "Chic Blooms",
+  ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Promise Events - Décoration événementielle",
+    title: "Promise Events - Décoration événementielle à Genève",
     description:
-      "Décoration événementielle, demandes en mariage et compositions florales haut de gamme.",
-    url: "https://www.promise-events.com",
-    siteName: "Promise Events",
+      "Décoration événementielle, demandes en mariage, bouquets de mariée et location de matériel haut de gamme à Genève et alentours.",
+    url: seoConfig.siteUrl,
+    siteName: seoConfig.siteName,
     images: [
       {
-        url: "/images/og-promise-logo.png",
+        url: seoConfig.defaultImage,
         width: 1200,
         height: 630,
-        alt: "Logo Promise Events",
+        alt: "Décoration de demande en mariage Promise Events au bord du lac",
       },
     ],
     locale: "fr_FR",
@@ -101,10 +120,21 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Promise Events - Décoration événementielle",
+    title: "Promise Events - Décoration événementielle à Genève",
     description:
-      "Décoration événementielle, demandes en mariage et compositions florales haut de gamme.",
-    images: ["/images/og-promise-logo.png"],
+      "Décoration événementielle, demandes en mariage, bouquets de mariée et location de matériel haut de gamme à Genève et alentours.",
+    images: [seoConfig.defaultImage],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
   icons: {
     icon: "/images/H.png",
@@ -119,6 +149,28 @@ export const viewport = {
 };
 
 export default function RootLayout({ children }) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Promise Events",
+    url: seoConfig.siteUrl,
+    image: `${seoConfig.siteUrl}${seoConfig.defaultImage}`,
+    logo: `${seoConfig.siteUrl}/images/H.png`,
+    telephone: seoConfig.phone,
+    email: seoConfig.email,
+    priceRange: "€€",
+    areaServed: ["Genève", "Suisse", "Auvergne-Rhône-Alpes"],
+    sameAs: [seoConfig.instagram],
+    description:
+      "Décoration événementielle, demandes en mariage, bouquets de mariée et location de matériel haut de gamme.",
+    makesOffer: [
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Décoration événementielle" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Demande en mariage" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Bouquet de mariée" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Location de matériel événementiel" } },
+    ],
+  };
+
   return (
     <html lang="fr" data-scroll-behavior="smooth">
       <head>
@@ -128,6 +180,10 @@ export default function RootLayout({ children }) {
         <link rel="dns-prefetch" href="https://embed.cloudflarestream.com" />
       </head>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <script dangerouslySetInnerHTML={{ __html: nativeTransitionScript }} />
         <RouteTransitionProvider>
           <ScrollEffects />

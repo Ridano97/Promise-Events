@@ -1,8 +1,11 @@
 import LegalPage from "../../components/LegalPage";
+import { pageMetadata } from "../seo";
 
-export const metadata = {
-  title: "Conditions générales de vente - Promise Events",
-};
+export const metadata = pageMetadata({
+  title: "Conditions générales de vente",
+  description: "Conditions générales de vente des prestations et locations Promise Events.",
+  path: "/cgv",
+});
 
 export default function CgvPage() {
   return (

@@ -1,8 +1,11 @@
 import LegalPage from "../../components/LegalPage";
+import { pageMetadata } from "../seo";
 
-export const metadata = {
-  title: "Politique de confidentialité - Promise Events",
-};
+export const metadata = pageMetadata({
+  title: "Politique de confidentialité",
+  description: "Politique de confidentialité et traitement des données personnelles du site Promise Events.",
+  path: "/politique-de-confidentialite",
+});
 
 export default function PolitiqueConfidentialitePage() {
   return (

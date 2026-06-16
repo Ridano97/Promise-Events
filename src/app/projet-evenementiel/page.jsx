@@ -2,10 +2,20 @@ import ContactSection from "../../components/ContactSection";
 import PageHero from "../../components/PageHero";
 import Services from "../../components/Services";
 import Story from "../../components/Story";
+import { pageMetadata } from "../seo";
 
-export const metadata = {
-  title: "Projet événementiel - Promise Events",
-};
+export const metadata = pageMetadata({
+  title: "Projet événementiel sur mesure",
+  description:
+    "Promise Events imagine la scénographie et la décoration de vos mariages, anniversaires, baptêmes, réceptions privées et événements d'exception.",
+  path: "/projet-evenementiel",
+  keywords: [
+    "projet événementiel Genève",
+    "scénographie événementielle",
+    "décoration mariage",
+    "décoration anniversaire",
+  ],
+});
 
 export default function ProjetEvenementielPage() {
   return (

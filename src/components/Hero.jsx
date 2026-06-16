@@ -1,13 +1,10 @@
-import CloudflareStream from "./CloudflareStream";
+import HeroVideo from "./HeroVideo";
 
 export default function Hero() {
   return (
     <section className="hero" id="accueil">
       <div className="hero-video" aria-hidden="true">
-        <CloudflareStream
-          videoId="c2fe61b6266dbd15cd4b96e70b7f1a9f"
-          title=""
-        />
+        <HeroVideo videoId="c2fe61b6266dbd15cd4b96e70b7f1a9f" />
       </div>
 
       <div className="hero-copy">
