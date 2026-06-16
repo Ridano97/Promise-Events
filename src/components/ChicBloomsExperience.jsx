@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Flower2, Gem, Heart, MapPin, MessageCircle } from "lucide-react";
+import { ArrowUpRight, Flower2, Gem, Heart, MapPin } from "lucide-react";
 import { Autoplay, FreeMode } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -142,33 +142,6 @@ export default function ChicBloomsExperience() {
             Commander via WhatsApp <ArrowUpRight size={17} />
           </a>
         </motion.aside>
-      </section>
-
-      <section className="chic-hero">
-        <motion.div
-          className="chic-hero__brand"
-          initial={{ opacity: 0, y: 32 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <h1>Pour vos mariages, demandes en mariage et événements d’exception.</h1>
-          <span className="chic-hero__line" />
-          <p className="chic-hero__description">
-            Chaque bouquet raconte une histoire. Des compositions uniques, pensées avec amour et
-            réalisées avec les plus belles fleurs de saison.
-          </p>
-          <div className="chic-hero__actions">
-            <a
-              className="chic-hero__whatsapp"
-              href="https://wa.me/33773433824"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Commander via WhatsApp <MessageCircle size={15} />
-            </a>
-          </div>
-        </motion.div>
-
       </section>
 
       <section className="chic-collection" id="collection">

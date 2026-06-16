@@ -16,7 +16,7 @@ const pages = [
       type: "text",
       paragraphs: [
         "Promise Event, c'est ma promesse. Celle de transformer chaque événement en moment unique.",
-        "Chez moi, tout a commencé par une passion : celle des fêtes réussies, des détails qui font la différence et des ambiances élégantes.",
+        "Tout a commencé par une passion : celle des fêtes réussies, des détails qui font la différence et des ambiances élégantes.",
       ],
     },
     {

@@ -21,7 +21,7 @@ const bouquets = [
   },
   {
     src: "/images/bouquetrouge2.jpg",
-    title: "Bouquet de 50 roses rouges",
+    title: "Bouquet de 50 roses rouges Équateur",
     detail: "Composition florale généreuse",
     price: "225 €",
   },
@@ -40,7 +40,7 @@ const packItems = [
   },
   {
     title: "Photos et vidéos souvenirs",
-    text: "Vidéo lors de la découverte du lieu et de la demande en mariage, photos et vidéos à volonté.",
+    text: "Vidéo lors de la découverte du lieu et de la demande en mariage, photos et vidéos à volonté. Une musique d'ambiance pour sublimer chaque émotion.",
     price: "30 €",
   },
 ];
@@ -55,7 +55,7 @@ export default function ProposalExperience() {
             <span>en mariage</span>
           </h1>
           <a className="proposal-hero__button" href="#tarifs-packs-complets">
-            Voir les tarifs du pack complet
+            Voir les tarifs
           </a>
         </div>
 
