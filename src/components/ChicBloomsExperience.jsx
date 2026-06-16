@@ -1,14 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  ArrowUpRight,
-  Flower2,
-  Gem,
-  Heart,
-  MapPin,
-  MessageCircle,
-} from "lucide-react";
+import { ArrowUpRight, Flower2, Gem, Heart, MapPin, MessageCircle } from "lucide-react";
 import { Autoplay, FreeMode } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -172,9 +165,6 @@ export default function ChicBloomsExperience() {
               rel="noreferrer"
             >
               Commander via WhatsApp <MessageCircle size={15} />
-            </a>
-            <a className="chic-scroll-cue" href="#collection">
-              Découvrir nos créations <ArrowUpRight size={15} />
             </a>
           </div>
         </motion.div>

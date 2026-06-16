@@ -48,6 +48,28 @@
   line-height: 1.1;
 }
 
+.proposal-hero__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 58px;
+  margin-top: 14px;
+  padding: 0 28px;
+  background: var(--rose);
+  color: var(--white);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: transform 260ms ease, background 260ms ease;
+}
+
+.proposal-hero__button:hover {
+  transform: translateY(-3px);
+  background: var(--rose-dark);
+}
+
 .proposal-hero__lead {
   max-width: 560px;
   margin: 0;

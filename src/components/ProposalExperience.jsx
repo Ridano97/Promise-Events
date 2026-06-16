@@ -54,6 +54,9 @@ export default function ProposalExperience() {
             Demande
             <span>en mariage</span>
           </h1>
+          <a className="proposal-hero__button" href="#tarifs-packs-complets">
+            Voir les tarifs du pack complet
+          </a>
         </div>
 
         <figure className="proposal-hero__media" data-proposal-hero-media>
@@ -90,7 +93,7 @@ export default function ProposalExperience() {
         </div>
       </section>
 
-      <section className="proposal-pack" data-proposal-pack>
+      <section className="proposal-pack" id="tarifs-packs-complets" data-proposal-pack>
         <div className="proposal-pack__heading" data-reveal>
           <p className="proposal-kicker">Une expérience clé en main</p>
           <h2>Pack demande en mariage complet</h2>
