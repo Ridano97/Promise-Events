@@ -33,11 +33,11 @@
   --white: #fffdf8;
   --line: rgba(46, 40, 34, 0.24);
   --shadow: 0 28px 70px rgba(46, 40, 34, 0.18);
-  --serif: "Didot", "Bodoni 72", "Bodoni 72 Oldstyle", "Iowan Old Style", Georgia,
-    serif;
-  --sans: "Didot", "Bodoni 72", "Bodoni 72 Oldstyle", "Iowan Old Style", Georgia,
-    serif;
-  --mono: "SF Mono", "Courier New", monospace;
+  --font-readable: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --serif: var(--font-readable);
+  --sans: var(--font-readable);
+  --mono: var(--font-readable);
+  --font-serif: var(--font-readable);
 }
 
 * {

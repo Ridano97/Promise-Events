@@ -164,47 +164,6 @@
   color: var(--rose);
 }
 
-.contact-identity {
-  position: relative;
-  display: grid;
-  aspect-ratio: 3019 / 2335;
-  margin-top: 42px;
-  overflow: hidden;
-  border: 1px solid rgba(46, 40, 34, 0.14);
-  background: #e7e2d9;
-}
-
-.contact-identity > div:first-child {
-  position: relative;
-  display: block;
-  min-height: 100%;
-}
-
-.contact-identity img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.contact-identity span {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  padding: 14px 18px;
-  background: rgba(28, 22, 19, 0.82);
-  color: var(--cream);
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-align: center;
-}
-
 .contact-form {
   position: relative;
   isolation: isolate;

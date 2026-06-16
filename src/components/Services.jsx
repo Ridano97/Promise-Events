@@ -2,23 +2,28 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { TransitionLink } from "./RouteTransition";
 
 const services = [
   {
     title: "Demande en mariage",
     image: "/images/accueil2.jpg",
+    href: "/demande-en-mariage",
   },
   {
     title: "Composition florale",
     image: "/images/bouquet4.png",
+    href: "/chic-blooms",
   },
   {
     title: "Projet événementiel",
     image: "/images/fete.png",
+    href: "/contact",
   },
   {
     title: "Location de matériel de décoration",
     image: "/images/decorationevenementiel.png",
+    href: "/catalogue-de-location",
   },
 ];
 
@@ -67,14 +72,14 @@ export default function Services() {
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 1, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
-            <article className="service-card">
+            <TransitionLink className="service-card" href={service.href} aria-label={`Voir ${service.title}`}>
               <div className="service-card__media">
                 <Image src={service.image} alt="" fill sizes="(max-width: 760px) 100vw, 25vw" />
               </div>
               <div className="service-card__copy">
                 <h3>{service.title}</h3>
               </div>
-            </article>
+            </TransitionLink>
           </motion.div>
         ))}
       </div>

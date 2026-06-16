@@ -95,6 +95,62 @@ const reveal = {
 export default function ChicBloomsExperience() {
   return (
     <>
+      <section className="chic-welcome chic-welcome--top">
+        <motion.div {...reveal} className="chic-welcome__heading">
+          <p className="chic-label">L'univers Chic Blooms</p>
+          <h2>Bienvenue dans l’univers de <em>Chic Blooms</em></h2>
+        </motion.div>
+
+        <motion.div {...reveal} className="chic-welcome__copy">
+          <p>
+            Du bouquet délicat aux créations plus majestueuses, nous réalisons des compositions
+            confectionnées sur mesure avec une attention particulière portée à chaque détail.
+          </p>
+          <p>
+            Nos bouquets évoluent au fil des saisons et des floraisons, tout en mettant à
+            l’honneur la rose, éternel symbole d’amour et de raffinement.
+          </p>
+        </motion.div>
+
+        <motion.aside {...reveal} className="chic-order">
+          <h3>Comment commander&nbsp;?</h3>
+          <ul className="chic-order__steps">
+            <li>
+              <strong>Commande sur WhatsApp uniquement.</strong>
+              <span>Répondez au message automatique pour que votre demande soit traitée rapidement.</span>
+            </li>
+            <li>
+              <strong>Bouquets de moins de 30 roses.</strong>
+              <span>La création est possible uniquement en retrait.</span>
+            </li>
+            <li>
+              <strong>À partir de 30 roses.</strong>
+              <span>La livraison est possible dans un rayon de 50 km autour de Genève.</span>
+            </li>
+            <li>
+              <strong>Délai minimum.</strong>
+              <span>Merci de commander au moins 48 heures à l’avance pour garantir la disponibilité des fleurs.</span>
+            </li>
+            <li>
+              <strong>Validation de la commande.</strong>
+              <span>Un acompte de 30 % est demandé. La commande est confirmée uniquement après réception de l’acompte.</span>
+            </li>
+            <li>
+              <strong>Retrait ou livraison.</strong>
+              <span>Une fois l’acompte reçu, nous fixons ensemble l’heure du retrait ou de la livraison. Des frais de déplacement peuvent s’appliquer.</span>
+            </li>
+          </ul>
+          <a
+            className="chic-text-link"
+            href="https://wa.me/33773433824"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Commander via WhatsApp <ArrowUpRight size={17} />
+          </a>
+        </motion.aside>
+      </section>
+
       <section className="chic-hero">
         <motion.div
           className="chic-hero__brand"
@@ -226,55 +282,6 @@ export default function ChicBloomsExperience() {
             </SwiperSlide>
           ))}
         </Swiper>
-      </section>
-
-      <section className="chic-welcome">
-        <motion.div {...reveal} className="chic-welcome__heading">
-          <p className="chic-label">L'univers Chic Blooms</p>
-          <h2>Bienvenue dans l’univers de <em>Chic Blooms</em></h2>
-        </motion.div>
-
-        <motion.div {...reveal} className="chic-welcome__copy">
-          <p>
-            Du bouquet délicat aux créations plus majestueuses, nous réalisons des compositions
-            confectionnées sur mesure avec une attention particulière portée à chaque détail.
-          </p>
-          <p>
-            Nos bouquets évoluent au fil des saisons et des floraisons, tout en mettant à
-            l’honneur la rose, éternel symbole d’amour et de raffinement.
-          </p>
-        </motion.div>
-
-        <motion.aside {...reveal} className="chic-order">
-          <h3>Comment commander&nbsp;?</h3>
-          <p>
-            Les prises de commande s’effectuent uniquement via WhatsApp. Merci de répondre au
-            message automatique afin de faciliter le traitement de votre demande.
-          </p>
-          <p>
-            Pour les bouquets de moins de 30 roses, la création est possible uniquement en
-            retrait. À partir de 30 roses, la livraison est disponible dans un rayon de 50 km
-            autour de Genève, selon le lieu de prestation. Des frais de déplacement peuvent
-            s’appliquer.
-          </p>
-          <p>
-            Les commandes doivent être effectuées minimum 48 heures à l’avance afin de garantir
-            la disponibilité des fleurs et la meilleure qualité de réalisation.
-          </p>
-          <p>
-            Afin de valider votre commande, un acompte de 30 % sera demandé. Aucune commande ne
-            sera confirmée sans le versement de cet acompte. Une fois l’acompte reçu, nous
-            convenons ensemble de l’heure du retrait ou de la livraison.
-          </p>
-          <a
-            className="chic-text-link"
-            href="https://wa.me/33773433824"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Commander via WhatsApp <ArrowUpRight size={17} />
-          </a>
-        </motion.aside>
       </section>
 
       <section className="chic-benefits">

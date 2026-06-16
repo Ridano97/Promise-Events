@@ -94,12 +94,6 @@ export default function ContactSection() {
           </div>
         </dl>
 
-        <div className="contact-identity" data-reveal="image">
-          <div>
-            <img src="/images/hanna.jpg" alt="Hanna, créatrice de Promise Events" />
-            <span>Hanna · Créatrice de Promise Events</span>
-          </div>
-        </div>
       </div>
 
       <motion.form
