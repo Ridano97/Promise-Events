@@ -34,6 +34,15 @@
   pointer-events: none;
 }
 
+.hero-video__native {
+  opacity: 0;
+  transition: opacity 240ms ease;
+}
+
+.hero-video__native.is-playing {
+  opacity: 1;
+}
+
 .hero::before {
   content: "";
   position: absolute;
