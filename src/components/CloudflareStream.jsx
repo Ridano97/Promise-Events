@@ -76,7 +76,7 @@ export default function CloudflareStream({ videoId, title, loading = "eager", cl
       src={`https://customer-8z1yg93quaaa9ooh.cloudflarestream.com/${videoId}/iframe?autoplay=true&muted=true&loop=true&controls=false&preload=auto`}
       title={title}
       loading={loading}
-      allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+      allow="autoplay *; fullscreen; encrypted-media; picture-in-picture"
       allowFullScreen
       onLoad={() => {
         const player = playerRef.current;

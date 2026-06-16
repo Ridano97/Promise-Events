@@ -78,9 +78,34 @@ const nativeTransitionScript = `
 `;
 
 export const metadata = {
+  metadataBase: new URL("https://www.promise-events.com"),
   title: "Promise Events - Décoration événementielle",
   description:
     "Décoration événementielle, demandes en mariage et compositions florales haut de gamme.",
+  openGraph: {
+    title: "Promise Events - Décoration événementielle",
+    description:
+      "Décoration événementielle, demandes en mariage et compositions florales haut de gamme.",
+    url: "https://www.promise-events.com",
+    siteName: "Promise Events",
+    images: [
+      {
+        url: "/images/og-promise-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Logo Promise Events",
+      },
+    ],
+    locale: "fr_FR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Promise Events - Décoration événementielle",
+    description:
+      "Décoration événementielle, demandes en mariage et compositions florales haut de gamme.",
+    images: ["/images/og-promise-logo.png"],
+  },
   icons: {
     icon: "/images/H.png",
     shortcut: "/images/H.png",
@@ -96,6 +121,12 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr" data-scroll-behavior="smooth">
+      <head>
+        <link rel="preconnect" href="https://customer-8z1yg93quaaa9ooh.cloudflarestream.com" />
+        <link rel="dns-prefetch" href="https://customer-8z1yg93quaaa9ooh.cloudflarestream.com" />
+        <link rel="preconnect" href="https://embed.cloudflarestream.com" />
+        <link rel="dns-prefetch" href="https://embed.cloudflarestream.com" />
+      </head>
       <body>
         <script dangerouslySetInnerHTML={{ __html: nativeTransitionScript }} />
         <RouteTransitionProvider>
