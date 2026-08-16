@@ -251,19 +251,6 @@ export default function ChicBloomsExperience() {
           </motion.article>
         ))}
       </section>
-
-      <section className="chic-cta">
-        <motion.div {...reveal} className="chic-cta__button-wrap">
-          <a
-            className="chic-button"
-            href="https://wa.me/33773433824?text=Bonjour%20Chic%20Blooms%2C%20je%20souhaite%20cr%C3%A9er%20mon%20bouquet."
-            target="_blank"
-            rel="noreferrer"
-          >
-            Créer mon bouquet <ArrowUpRight size={18} />
-          </a>
-        </motion.div>
-      </section>
     </>
   );
 }
