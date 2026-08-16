@@ -1543,3 +1543,8 @@
     border-bottom: 0;
   }
 }
+
+.chic-highlight {
+  color: var(--chic-red);
+  font-weight: 700;
+}

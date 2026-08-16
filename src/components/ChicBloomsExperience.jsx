@@ -115,8 +115,8 @@ export default function ChicBloomsExperience() {
           </p>
           <p>
             Découvrez nos créations et passez votre commande directement sur le site internet
-            Chic Blooms. Grâce au Click & Collect, commandez en ligne et récupérez simplement
-            votre bouquet dans notre boutique à Annemasse.
+            Chic Blooms. <strong className="chic-highlight">Grâce au Click & Collect, commandez
+            en ligne et récupérez simplement votre bouquet dans notre boutique à Annemasse.</strong>
           </p>
           <div className="chic-welcome__actions">
             <a
