@@ -118,6 +118,10 @@ export default function ChicBloomsExperience() {
             Chic Blooms. <strong className="chic-highlight">Grâce au Click & Collect, commandez
             en ligne et récupérez simplement votre bouquet dans notre boutique à Annemasse.</strong>
           </p>
+          <figure className="chic-boutique-photo">
+            <img src="/images/chic-blooms-boutique-annemasse.jpg" alt="Boutique Chic Blooms à Annemasse" />
+            <figcaption>La boutique Chic Blooms à Annemasse</figcaption>
+          </figure>
           <div className="chic-welcome__actions">
             <a
               className="chic-text-link"

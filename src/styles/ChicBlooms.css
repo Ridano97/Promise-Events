@@ -1548,3 +1548,36 @@
   color: var(--chic-red);
   font-weight: 700;
 }
+
+.chic-boutique-photo {
+  width: min(100%, 612px);
+  margin: 12px auto 4px;
+  overflow: hidden;
+  border: 1px solid rgba(141, 20, 32, 0.14);
+  background: var(--chic-paper);
+  box-shadow: 0 22px 58px rgba(73, 59, 48, 0.12);
+}
+
+.chic-boutique-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 14;
+  object-fit: cover;
+  object-position: center;
+}
+
+.chic-boutique-photo figcaption {
+  padding: 14px 18px;
+  color: var(--chic-red);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  .chic-boutique-photo img {
+    aspect-ratio: 9 / 14;
+    object-position: center;
+  }
+}
