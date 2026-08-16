@@ -10,35 +10,35 @@ const bouquets = [
     image: "/images/bouquet3.png",
     name: "Rose blanche",
     detail: "avec gypsophile",
-    price: "90 €",
+    price: "Sur devis",
     note: "Romantique",
   },
   {
     image: "/images/bouquet1.png",
     name: "White Garden",
     detail: "fleurs blanches de saison",
-    price: "150 €",
+    price: "Sur devis",
     note: "Signature",
   },
   {
     image: "/images/bouquet2.png",
     name: "Lys perlé",
     detail: "callas et perles",
-    price: "120 €",
+    price: "Sur devis",
     note: "Précieux",
   },
   {
     image: "/images/bouquet4.jpg",
     name: "Pivoine",
     detail: "composition sur mesure",
-    price: "140 €",
+    price: "Sur devis",
     note: "Délicat",
   },
   {
     image: "/images/bouquet6.JPG",
     name: "Callas perlé",
     detail: "finitions joaillières",
-    price: "180 €",
+    price: "Sur devis",
     note: "Couture",
   },
 ];
@@ -96,52 +96,47 @@ export default function ChicBloomsExperience() {
 
         <motion.div {...reveal} className="chic-welcome__copy">
           <p>
-            Du bouquet délicat aux créations plus majestueuses, nous réalisons des compositions
-            confectionnées sur mesure avec une attention particulière portée à chaque détail.
+            Chic Blooms, c’est l’art de créer des compositions florales uniques et personnalisées.
           </p>
           <p>
-            Nos bouquets évoluent au fil des saisons et des floraisons, tout en mettant à
-            l’honneur la rose, éternel symbole d’amour et de raffinement.
+            Chaque création est confectionnée avec soin à partir d’une sélection de fleurs qui
+            évolue au fil des saisons, tout en mettant à l’honneur la rose éternelle, symbole
+            d’amour et véritable signature de notre savoir-faire.
           </p>
+          <h3>Retrouvez Chic Blooms à Annemasse</h3>
+          <p>
+            Chic Blooms vous accueille désormais dans sa boutique à Annemasse, un écrin dédié aux
+            fleurs et aux cadeaux personnalisés pour toutes les occasions.
+          </p>
+          <p>
+            Bouquets à offrir, bouquets de mariée, demandes en mariage, anniversaires,
+            naissances, événements ou simplement pour faire plaisir : nous réalisons des
+            compositions florales adaptées à chaque envie et à chaque moment de vie.
+          </p>
+          <p>
+            Découvrez nos créations et passez votre commande directement sur le site internet
+            Chic Blooms. Grâce au Click & Collect, commandez en ligne et récupérez simplement
+            votre bouquet dans notre boutique à Annemasse.
+          </p>
+          <div className="chic-welcome__actions">
+            <a
+              className="chic-text-link"
+              href="https://chicblooms.fr"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Commander sur le site Chic Blooms <ArrowUpRight size={17} />
+            </a>
+            <a
+              className="chic-text-link"
+              href="https://wa.me/33773433824"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Demande particulière sur WhatsApp : 07 73 43 38 24 <ArrowUpRight size={17} />
+            </a>
+          </div>
         </motion.div>
-
-        <motion.aside {...reveal} className="chic-order">
-          <h3>Comment commander&nbsp;?</h3>
-          <ul className="chic-order__steps">
-            <li>
-              <strong>Commande sur WhatsApp uniquement.</strong>
-              <span>Répondez au message automatique pour que votre demande soit traitée rapidement.</span>
-            </li>
-            <li>
-              <strong>Bouquets de moins de 30 roses.</strong>
-              <span>La création est possible uniquement en retrait.</span>
-            </li>
-            <li>
-              <strong>À partir de 30 roses.</strong>
-              <span>La livraison est possible dans un rayon de 50 km autour de Genève.</span>
-            </li>
-            <li>
-              <strong>Délai minimum.</strong>
-              <span>Merci de commander au moins 48 heures à l’avance pour garantir la disponibilité des fleurs.</span>
-            </li>
-            <li>
-              <strong>Validation de la commande.</strong>
-              <span>Un acompte de 30 % est demandé. La commande est confirmée uniquement après réception de l’acompte.</span>
-            </li>
-            <li>
-              <strong>Retrait ou livraison.</strong>
-              <span>Une fois l’acompte reçu, nous fixons ensemble l’heure du retrait ou de la livraison. Des frais de déplacement peuvent s’appliquer.</span>
-            </li>
-          </ul>
-          <a
-            className="chic-text-link"
-            href="https://wa.me/33773433824"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Commander via WhatsApp <ArrowUpRight size={17} />
-          </a>
-        </motion.aside>
       </section>
 
       <section className="chic-collection" id="collection">
